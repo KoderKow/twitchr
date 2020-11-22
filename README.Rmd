@@ -28,6 +28,8 @@ Thanks to
 remotes::install_github("koderkow/twitchr")
 ```
 
+## Examples
+
 ```{r}
 library(twitchr)
 ```
@@ -36,6 +38,18 @@ library(twitchr)
 twitch_auth()
 ```
 
+```{r}
+cheermotes <- get_cheermotes(broadcaster_id = 41245072)
+
+cheermotes
+```
+
+```{r}
+videos <- get_videos(user_id = 27699280)
+
+videos
+```
+
 ## Thanks to
 
-- [@Freguglia](https://github.com/Freguglia/rTwitchAPI) for getting me started on the oauth code
+- [Freguglia](https://github.com/Freguglia/rTwitchAPI) for getting me started on the oauth code
