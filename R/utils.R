@@ -4,15 +4,8 @@
 #'
 #' @return A character string in URL ready format.
 format_parameters <- function(...) {
-
-  print("parameter state before:")
-  print(list(...))
-
   parameters <- list(...) %>%
     purrr::compact()
-
-  print("parameter state:")
-  print(parameters)
 
   if (length(parameters) == 0) {
     return("")
@@ -25,9 +18,6 @@ format_parameters <- function(...) {
     }) %>%
     glue::glue_collapse(sep = "&") %>%
     paste0("?", .)
-
-  print("parameter fomatted:")
-  print(formatted_parameters)
 
   return(formatted_parameters)
 }

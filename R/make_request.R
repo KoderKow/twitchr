@@ -10,16 +10,12 @@ make_request <- function(
   ...,
   clean_json = TRUE
 ) {
-  print("make_request starting...")
   ## Clean params, if any
   formatted_params <- format_parameters(...)
-print("got formatted params!")
+
   ## Establish URLs
   base_url <- "https://api.twitch.tv/helix/"
   url_end_point <- glue::glue("{base_url}{end_point}{formatted_params}")
-
-  print("send request with this url:")
-  print(url_end_point)
 
   response <- httr::GET(url = url_end_point)
 
@@ -30,16 +26,14 @@ print("got formatted params!")
   if (clean_json == TRUE) {
     ## bits/cheermotes ----
     if (end_point == "bits/cheermotes") {
-      print("cleaning 1....")
       result <- clean_bits_cheermotes(response_content)
-
     }
 
     ## videos ----
     if (end_point == "videos") {
-      print("cleaning videos...")
       result <- clean_videos(response_content)
     }
+
   } else {
     result <- response_content
   }
