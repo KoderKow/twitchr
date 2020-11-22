@@ -1,0 +1,41 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# twitchr
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+R wrapper for the Twitch API.
+
+Thanks to 
+
+## Installation
+
+```{r, eval=FALSE}
+remotes::install_github("koderkow/twitchr")
+```
+
+```{r}
+library(twitchr)
+```
+
+```{r}
+twitch_auth()
+```
+
+## Thanks to
+
+- [@Freguglia](https://github.com/Freguglia/rTwitchAPI) for getting me started on the oauth code
