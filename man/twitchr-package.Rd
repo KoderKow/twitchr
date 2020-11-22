@@ -8,6 +8,14 @@
 \description{
 R Wrapper for the Twitch API.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/KoderKow/twitchr}
+  \item Report bugs at \url{https://github.com/KoderKow/twitchr/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Kyle Harris \email{koderkow@gmail.com}
 
