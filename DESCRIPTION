@@ -6,7 +6,7 @@ Authors@R:
            family = "Harris",
            role = c("aut", "cre"),
            email = "koderkow@gmail.com")
-Description: R Wrapper for the Twitch API.
+Description: Interact with Twitch through the Twitch API <https://dev.twitch.tv/docs/api/>.
 License: MIT + file LICENSE
 Imports: 
     assertthat,

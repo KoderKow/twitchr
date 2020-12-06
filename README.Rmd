@@ -20,8 +20,6 @@ knitr::opts_chunk$set(
 
 R wrapper for the Twitch API.
 
-Thanks to 
-
 ## Installation
 
 ```{r, eval=FALSE}

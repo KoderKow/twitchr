@@ -16,6 +16,7 @@
 #'
 #' @export
 #'
+#' @family Videos
 #' @references https://dev.twitch.tv/docs/api/reference#get-videos
 get_videos <- function(
   id = NULL,
