@@ -5,11 +5,13 @@
 
 <!-- badges: start -->
 
+[![Lifecycle:
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![R build
+status](https://github.com/KoderKow/twitchr/workflows/R-CMD-check/badge.svg)](https://github.com/KoderKow/twitchr/actions)
 <!-- badges: end -->
 
 R wrapper for the Twitch API.
-
-Thanks to
 
 ## Installation
 
@@ -31,7 +33,7 @@ twitch_auth()
 cheermotes <- get_cheermotes(broadcaster_id = 41245072)
 
 cheermotes
-#> # A tibble: 185 x 30
+#> # A tibble: 180 x 30
 #>    prefix type  order last_updated is_charitable tiers_min_bits tiers_id
 #>    <chr>  <chr> <int> <chr>        <lgl>                  <int> <chr>   
 #>  1 Cheer  glob~     1 2018-05-22T~ FALSE                      1 1       
@@ -44,7 +46,7 @@ cheermotes
 #>  8 Doodl~ glob~     1 2018-05-22T~ FALSE                   1000 1000    
 #>  9 Doodl~ glob~     1 2018-05-22T~ FALSE                   5000 5000    
 #> 10 Doodl~ glob~     1 2018-05-22T~ FALSE                  10000 10000   
-#> # ... with 175 more rows, and 23 more variables: tiers_color <chr>,
+#> # ... with 170 more rows, and 23 more variables: tiers_color <chr>,
 #> #   tiers_images_dark_animated_1 <chr>, tiers_images_dark_animated_1_5 <chr>,
 #> #   tiers_images_dark_animated_2 <chr>, tiers_images_dark_animated_3 <chr>,
 #> #   tiers_images_dark_animated_4 <chr>, tiers_images_dark_static_1 <chr>,
@@ -66,26 +68,26 @@ videos
 #> # A tibble: 20 x 14
 #>    id    user_id user_name title description created_at         
 #>    <chr> <chr>   <chr>     <chr> <chr>       <dttm>             
-#>  1 8110~ 276992~ KoderKow  High~ "Kyle gets~ 2020-11-21 19:20:11
-#>  2 8110~ 276992~ KoderKow  High~ "Debby goe~ 2020-11-21 19:20:11
-#>  3 8110~ 276992~ KoderKow  High~ "Kyle dips~ 2020-11-21 19:20:11
-#>  4 8110~ 276992~ KoderKow  High~ "We really~ 2020-11-21 19:20:11
-#>  5 8110~ 276992~ KoderKow  High~ "Kyle gets~ 2020-11-21 19:20:11
-#>  6 8110~ 276992~ KoderKow  High~ "You alrea~ 2020-11-21 19:20:11
-#>  7 8110~ 276992~ KoderKow  High~ "We actual~ 2020-11-21 19:20:10
-#>  8 8110~ 276992~ KoderKow  High~ "Kyle leav~ 2020-11-21 19:20:10
-#>  9 8110~ 276992~ KoderKow  High~ "Kyle cons~ 2020-11-21 19:20:10
-#> 10 8110~ 276992~ KoderKow  High~ "We see th~ 2020-11-21 19:20:10
-#> 11 8110~ 276992~ KoderKow  High~ "Our plan ~ 2020-11-21 19:20:10
-#> 12 8110~ 276992~ KoderKow  High~ "What is w~ 2020-11-21 19:20:10
-#> 13 8101~ 276992~ KoderKow  WE L~ ""          2020-11-21 01:59:24
-#> 14 8098~ 276992~ KoderKow  High~ "My best f~ 2020-11-20 21:42:18
-#> 15 8098~ 276992~ KoderKow  High~ "Kyle give~ 2020-11-20 21:42:18
-#> 16 8098~ 276992~ KoderKow  High~ ""          2020-11-20 21:42:18
-#> 17 8098~ 276992~ KoderKow  High~ "Kyle give~ 2020-11-20 21:42:18
-#> 18 8098~ 276992~ KoderKow  High~ "These mus~ 2020-11-20 21:42:18
-#> 19 8098~ 276992~ KoderKow  High~ ""          2020-11-20 21:42:18
-#> 20 8098~ 276992~ KoderKow  High~ "Kyle almo~ 2020-11-20 21:42:18
+#>  1 8187~ 276992~ KoderKow  We P~ "Kyle and ~ 2020-11-28 17:40:21
+#>  2 8183~ 276992~ KoderKow  [HL0~ "Why did I~ 2020-11-28 08:49:13
+#>  3 8183~ 276992~ KoderKow  [HL0~ "I run int~ 2020-11-28 08:49:13
+#>  4 8183~ 276992~ KoderKow  [HL0~ "I make fu~ 2020-11-28 08:49:13
+#>  5 8183~ 276992~ KoderKow  [HL0~ "I get coc~ 2020-11-28 08:49:13
+#>  6 8183~ 276992~ KoderKow  [HL0~ "This tree~ 2020-11-28 08:49:13
+#>  7 8183~ 276992~ KoderKow  [HL0~ "Our favor~ 2020-11-28 08:49:13
+#>  8 8183~ 276992~ KoderKow  [HL0~ "Kyle and ~ 2020-11-28 08:03:31
+#>  9 8183~ 276992~ KoderKow  [HL0~ "We think ~ 2020-11-28 08:03:31
+#> 10 8183~ 276992~ KoderKow  [HL0~ "I win the~ 2020-11-28 07:44:37
+#> 11 8183~ 276992~ KoderKow  [HL0~ "I feel so~ 2020-11-28 07:44:37
+#> 12 8183~ 276992~ KoderKow  [HL0~ "Kyle defe~ 2020-11-28 07:44:37
+#> 13 8183~ 276992~ KoderKow  [HL0~ "Kamek rui~ 2020-11-28 07:44:37
+#> 14 8183~ 276992~ KoderKow  [HL0~ "I dominat~ 2020-11-28 07:44:37
+#> 15 8183~ 276992~ KoderKow  [HL0~ "I realize~ 2020-11-28 07:44:37
+#> 16 8183~ 276992~ KoderKow  [HL0~ "Lol she d~ 2020-11-28 07:44:37
+#> 17 8183~ 276992~ KoderKow  [HL0~ "I cleared~ 2020-11-28 07:44:37
+#> 18 8183~ 276992~ KoderKow  [HL0~ "Kyle watc~ 2020-11-28 07:44:37
+#> 19 8183~ 276992~ KoderKow  [HL0~ "Kyle gets~ 2020-11-28 07:44:37
+#> 20 8183~ 276992~ KoderKow  [HL0~ "I freakin~ 2020-11-28 07:44:37
 #> # ... with 8 more variables: published_at <dttm>, url <chr>,
 #> #   thumbnail_url <chr>, viewable <chr>, view_count <int>, language <chr>,
 #> #   type <chr>, duration <chr>
@@ -96,5 +98,5 @@ videos
 
 ## Thanks to
 
-  - [Freguglia](https://github.com/Freguglia/rTwitchAPI) for getting me
+-   [Freguglia](https://github.com/Freguglia/rTwitchAPI) for getting me
     started on the oauth code
