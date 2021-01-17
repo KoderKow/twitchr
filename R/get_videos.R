@@ -18,6 +18,16 @@
 #'
 #' @family Videos
 #' @references https://dev.twitch.tv/docs/api/reference#get-videos
+#'
+#' @examples
+#' \dontrun{
+#' library(twitchr)
+#'
+#' twitch_auth()
+#'
+#' # Get a user'rs first 20 videos
+#' videos <- get_videos(user_id = 613890167)
+#' }
 get_videos <- function(
   id = NULL,
   user_id = NULL,
@@ -47,4 +57,6 @@ get_videos <- function(
     sort = sort,
     type = type
   )
+
+  return(d)
 }

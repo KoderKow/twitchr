@@ -18,5 +18,5 @@ twitch_auth(
 Invisible authorization data.
 }
 \description{
-Get started with the Twitch API \href{https://dev.twitch.tv/docs/api/}{here}. The default values to the parameters are checking for are  \code{TWITCH_CLIENT_ID} and \code{TWITCH_SECRET} in the \emph{.Renviron} file. Set these values in \emph{.Renviron} with \code{usethis::edit_r_environ()}; ex: \code{TWITCH_CLIENT_ID=abc123}.
+Get started with the Twitch API \href{https://dev.twitch.tv/docs/api/}{here}. \code{TWITCH_CLIENT_ID} and \code{TWITCH_SECRET} need to be set in the \emph{.Renviron} file. Set these values in \emph{.Renviron} with \code{usethis::edit_r_environ()}; ex: \code{TWITCH_CLIENT_ID=abc123}.
 }

@@ -44,6 +44,17 @@ get_videos(
 \description{
 Gets video information by video ID (one or more), user ID (one only), or game ID (one only). The following param description is from the Twitch API docs. Last Updated on 2020-11-22.
 }
+\examples{
+\dontrun{
+library(twitchr)
+
+twitch_auth()
+
+# Get a user'rs first 20 videos
+videos <- get_videos(user_id = 613890167)
+}
+}
 \references{
 https://dev.twitch.tv/docs/api/reference#get-videos
 }
+\concept{Videos}

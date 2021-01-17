@@ -1,6 +1,6 @@
 #' Get Auth Token
 #'
-#' Get started with the Twitch API [here](https://dev.twitch.tv/docs/api/). The default values to the parameters are checking for are  `TWITCH_CLIENT_ID` and `TWITCH_SECRET` in the *.Renviron* file. Set these values in *.Renviron* with `usethis::edit_r_environ()`; ex: `TWITCH_CLIENT_ID=abc123`.
+#' Get started with the Twitch API [here](https://dev.twitch.tv/docs/api/). `TWITCH_CLIENT_ID` and `TWITCH_SECRET` need to be set in the *.Renviron* file. Set these values in *.Renviron* with `usethis::edit_r_environ()`; ex: `TWITCH_CLIENT_ID=abc123`.
 #'
 #' @param client_id A character. Twitch App ID.
 #' @param client_secret A character. Twitch App Secret.

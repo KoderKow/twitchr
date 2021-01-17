@@ -14,7 +14,8 @@ format_parameters <- function(...) {
   formatted_parameters <-
     parameters %>%
     purrr::imap_chr(~ {
-      glue::glue("{.y}={.x}")
+      glue::glue_collapse(glue::glue("{.y}={.x}"), sep = "&")
+      # glue::glue("{.y}={.x}")
     }) %>%
     glue::glue_collapse(sep = "&") %>%
     paste0("?", .)

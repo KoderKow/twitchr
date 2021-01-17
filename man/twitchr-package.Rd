@@ -6,7 +6,8 @@
 \alias{twitchr-package}
 \title{twitchr: R Interface for the Twitch API}
 \description{
-R Wrapper for the Twitch API.
+Interact with Twitch through the Twitch API
+    <https://dev.twitch.tv/docs/api/>.
 }
 \seealso{
 Useful links:

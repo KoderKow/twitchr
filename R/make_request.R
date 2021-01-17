@@ -34,6 +34,16 @@ make_request <- function(
       result <- clean_videos(response_content)
     }
 
+    ## users ----
+    if (end_point == "users") {
+      result <- clean_users(response_content)
+    }
+
+    ## games ----
+    if (end_point == "games") {
+      result <- clean_games(response_content)
+    }
+
   } else {
     result <- response_content
   }
