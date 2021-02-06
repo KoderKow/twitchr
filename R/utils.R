@@ -18,7 +18,8 @@ format_parameters <- function(...) {
       # glue::glue("{.y}={.x}")
     }) %>%
     glue::glue_collapse(sep = "&") %>%
-    paste0("?", .)
+    paste0("?", .) %>%
+    URLencode()
 
   return(formatted_parameters)
 }

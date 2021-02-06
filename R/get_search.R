@@ -1,0 +1,42 @@
+search_channels <- function(
+  query = NULL,
+  clean_json = TRUE
+) {
+  end_point <- "search/channels"
+
+  d <- make_request(
+    end_point = end_point,
+    clean_json = clean_json,
+    query = query
+  )
+
+  return(d)
+}
+
+#' Get All Stream Tags
+#'
+#' @param after A character. Cursor for forward pagination: tells the server where to start fetching the next set of results, in a multi-page response. The cursor value specified here is from the pagination response field of a prior query.
+#' @param first A numeric. Maximum number of objects to return. Maximum: 100. Default: 20.
+#' @param tag_id A character. ID of a tag. Multiple IDs can be specified, separated by ampersands. If provided, only the specified tag(s) is(are) returned. Maximum of 100.
+#' @param clean_json A logical. If `TRUE`, clean and tidy the data. If `FALSE`, return the result of `httr::content`.
+#'
+#' @return
+#' @export
+#'
+#' @references https://dev.twitch.tv/docs/api/reference#get-all-stream-tags
+get_all_stream_tags <- function(
+  after = NULL,
+  first = NULL,
+  tag_id = NULL,
+  clean_json = TRUE
+) {
+  d <- make_request(
+    end_point = "tags/streams",
+    clean_json = clean_json,
+    after = after,
+    first = first,
+    tag_id = tag_id
+  )
+
+  return(d)
+}

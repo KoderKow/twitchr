@@ -21,7 +21,7 @@ make_request <- function(
 
   check_status(response)
 
-  response_content <- httr::content(response)
+  response_content <<- httr::content(response)
 
   if (clean_json == TRUE) {
     ## bits/cheermotes ----
@@ -42,6 +42,29 @@ make_request <- function(
     ## games ----
     if (end_point == "games") {
       result <- clean_games(response_content)
+    }
+
+    ## top/games ----
+    if (end_point == "games/top") {
+      result <- clean_top_games(response_content)
+    }
+
+    ## clips ----
+    if (end_point == "clips") {
+      result <- clean_clips(response_content)
+    }
+
+    ## Search Channels ----
+    if (end_point == "search/channels") {
+      result <- clean_search_channels(response_content)
+    }
+
+    if (end_point == "tags/streams") {
+      result <- clean_get_all_stream_tags(response_content)
+    }
+
+    if (end_point == "search/categories") {
+      result <- clean_search_categories(response_content)
     }
 
   } else {

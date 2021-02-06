@@ -12,5 +12,5 @@ check_status <- function(response) {
     usethis::ui_stop("Bad Request (HTTP {response_content$status}). {stringr::str_to_sentence(response_content$message)}.")
   }
 
-  return(invisible(NULL))
+  return(invisible())
 }
