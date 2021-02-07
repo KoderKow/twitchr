@@ -1,0 +1,35 @@
+---
+title: "Authentication Set Up"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Authentication Set Up}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Introduction
+
+This document serves as a guide to help set up the RStudio environment to work seamlessly with the {twitchr} package.
+
+## Steps
+
+1. Go to https://dev.twitch.tv/login
+2. Login with Twitch
+3. Click *Register Your Application*
+4. Fill out the App information
+  - Name: Name of the app. Something to label it for the own personal use
+  - OAuth Redirect URLs: Fill this in if one if you have one. If not put `http://localhost`
+  - Category: Pick related category such as *Analytics Tool*
+5. Click Create
+6. On the new app, click *Manage*
+7. This page will have the Client ID and Client Secret
+8. Open the `.Renviron` to add these values
+  - Run `usethis::edit_r_environ()` in the RStudio R console
+9. Enter the two key values into this file with the following key names
+  - TWITCH_CLIENT_ID=YOUR CLIENT ID
+  - TWITCH_SECRET=YOUR SECRET
+10. Restart the RStudio session
+
+## More Information
+
+Read about getting authorization tokens [here](https://dev.twitch.tv/docs/authentication).

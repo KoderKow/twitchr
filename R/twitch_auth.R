@@ -8,8 +8,8 @@
 #' @return Invisible authorization data.
 #' @export
 twitch_auth <- function(
-  client_id = Sys.getenv("TWITCH_CLIENT_ID"),
-  client_secret = Sys.getenv("TWITCH_SECRET")
+  client_id = Sys.getenv("TWITCH_CLIENT_ID_TEST"),
+  client_secret = Sys.getenv("TWITCH_SECRET_TEST")
 ) {
 
   if (assertthat::are_equal(client_id, "") | assertthat::are_equal(client_secret, "") | assertthat::are_equal(client_id, NULL) | assertthat::are_equal(client_secret, NULL)) {

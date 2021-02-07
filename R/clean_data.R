@@ -8,12 +8,27 @@ clean_videos <- function(response_content) {
     response_content %>%
     purrr::pluck("data") %>%
     dplyr::bind_rows() %>%
-    dplyr::mutate(
-      dplyr::across(
-        .cols = c("created_at", "published_at"),
-        .fns = lubridate::ymd_hms
-      )
-    )
+    date_formatter()
+
+  return_list <- list(
+    data = data_clean,
+    pagination = response_content$pagination$cursor
+  )
+
+  return(return_list)
+}
+
+#' Clean the Response From the Clips Endpoint
+#'
+#' @inheritParams clean_videos
+#'
+#' @return Clean and tidy tibble.
+clean_clips <- function(response_content) {
+  data_clean <-
+    response_content %>%
+    purrr::pluck("data") %>%
+    dplyr::bind_rows() %>%
+    date_formatter()
 
   return_list <- list(
     data = data_clean,

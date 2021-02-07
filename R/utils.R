@@ -15,7 +15,6 @@ format_parameters <- function(...) {
     parameters %>%
     purrr::imap_chr(~ {
       glue::glue_collapse(glue::glue("{.y}={.x}"), sep = "&")
-      # glue::glue("{.y}={.x}")
     }) %>%
     glue::glue_collapse(sep = "&") %>%
     paste0("?", .) %>%
@@ -34,8 +33,8 @@ flatten_keep_names <- function (x, use.names = TRUE, classes = "ANY") {
   y <- vector("list", len)
   i <- 0L
   items <- rapply(x, function(x) {
-    i <<- i + 1L
-    y[[i]] <<- x
+    i <- i + 1L
+    y[[i]] <- x
     TRUE
   }, classes = classes)
   if (use.names && !is.null(nm <- names(items)))
@@ -62,3 +61,18 @@ flatten_keep_names <- function (x, use.names = TRUE, classes = "ANY") {
   return(suppressMessages(rlang::eval_tidy(rlang::parse_quo(pipe, env = rlang::caller_env()))))
 }
 
+#' Wrapper for Formatting Date Times
+#'
+#' @param .data A tibble. Data to be formatted.
+date_formatter <- function(.data) {
+  d <-
+    .data %>%
+    dplyr::mutate(
+      dplyr::across(
+        .cols = c("created_at", "published_at"),
+        .fns = lubridate::ymd_hms
+      )
+    )
+
+  return(d)
+}
