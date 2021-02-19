@@ -5,8 +5,8 @@
 \title{Get Auth Token}
 \usage{
 twitch_auth(
-  client_id = Sys.getenv("TWITCH_CLIENT_ID_TEST"),
-  client_secret = Sys.getenv("TWITCH_SECRET_TEST")
+  client_id = Sys.getenv("TWITCH_CLIENT_ID"),
+  client_secret = Sys.getenv("TWITCH_SECRET")
 )
 }
 \arguments{

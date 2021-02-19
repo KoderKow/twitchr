@@ -8,12 +8,16 @@
 #' @return Invisible authorization data.
 #' @export
 twitch_auth <- function(
-  client_id = Sys.getenv("TWITCH_CLIENT_ID_TEST"),
-  client_secret = Sys.getenv("TWITCH_SECRET_TEST")
+  client_id = Sys.getenv("TWITCH_CLIENT_ID"),
+  client_secret = Sys.getenv("TWITCH_SECRET")
 ) {
 
-  if (assertthat::are_equal(client_id, "") | assertthat::are_equal(client_secret, "") | assertthat::are_equal(client_id, NULL) | assertthat::are_equal(client_secret, NULL)) {
-    usethis::ui_stop("{usethis::ui_value('client_id')} and {usethis::ui_value('client_secret')} need to set.")
+  if (client_id == "" | is.null(client_id)) {
+    usethis::ui_stop("Twitch Client ID is not detected. Set TWITCH_CLIENT_ID in your .Renviron. For help run {usethis::ui_value('vignette(\"authentication-set-up\", package = \"twitchr\")')} in the R console.")
+  }
+
+  if (client_secret == "" | is.null(client_secret)) {
+    usethis::ui_stop("Twitch Secret is not detected. Set TWITCH_SECRET in your .Renviron. For help run {usethis::ui_value('vignette(\"authentication-set-up\", package = \"twitchr\")')} in the R console.")
   }
 
   query_list <- list(

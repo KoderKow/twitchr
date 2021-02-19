@@ -58,7 +58,8 @@ clean_bits_cheermotes <- function(response_content) {
   data_clean <-
     data_raw %>%
     dplyr::select(-tiers) %>%
-    dplyr::bind_cols(tiers_clean)
+    dplyr::bind_cols(tiers_clean) %>%
+    date_formatter()
 
   return(data_clean)
 }
@@ -158,14 +159,16 @@ tag_cleaner <- function(data_raw_element) {
 #' Clean the Response From Search Channels
 #'
 #' @inheritParams clean_videos
+#' @param filter_language A character. Language to filter the return of tags.
 #'
 #' @return A named list containing: data, a Clean and tidy tibble. pagination, cursor for pagination.
-clean_get_all_stream_tags <- function(response_content) {
+clean_get_all_stream_tags <- function(response_content, filter_language) {
 
   data_clean <-
     response_content %>%
     purrr::pluck("data") %>%
-    purrr::map_dfr(get_all_tags_response_cleaner)
+    purrr::map_dfr(get_all_tags_response_cleaner) %>%
+    dplyr::filter(language == filter_language)
 
   return_list <- list(
     data = data_clean,
@@ -180,12 +183,28 @@ get_all_tags_response_cleaner <- function(data_raw_element) {
     dplyr::tibble(
       tag_id = data_raw_element$tag_id,
       is_auto = data_raw_element$is_auto,
-      langage = names(data_raw_element$localization_names),
+      language = names(data_raw_element$localization_names),
       localization_names = unlist(data_raw_element$localization_names, use.names = FALSE),
       localization_descriptions = unlist(data_raw_element$localization_descriptions, use.names = FALSE)
     )
 
   return(d)
+}
+
+#' Clean Stream Tags
+#'
+#' @inheritParams clean_videos
+#' @inheritParams clean_get_all_stream_tags
+#'
+#' @return Clean and tidy tibble.
+clean_stream_tags <- function(response_content, filter_language) {
+  data_clean <-
+    response_content %>%
+    purrr::pluck("data") %>%
+    purrr::map_dfr(get_all_tags_response_cleaner) %>%
+    dplyr::filter(language == filter_language)
+
+  return(data_clean)
 }
 
 #' Clean the Response From Search Categories
@@ -206,3 +225,4 @@ clean_search_categories <- function(response_content) {
 
   return(return_list)
 }
+
