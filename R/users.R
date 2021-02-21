@@ -1,6 +1,6 @@
 #' Get Users
 #'
-#' Gets information about one or more specified Twitch users. Users are identified by optional user IDs and/or login name. If neither a user ID nor a login name is specified, the user is looked up by Bearer token.
+#' Gets information about one or more specified Twitch users. Users are identified by optional user IDs and/or login name. If neither a user ID nor a login name is specified, the user is looked up by Bearer token. *Note: This package does not support the bearer token at this time.*
 #'
 #' @param id A character. Optional. User ID. Multiple user IDs can be specified. Limit: 100.
 #' @param login A character. Optional. User login name. Multiple login names can be specified. Limit: 100.

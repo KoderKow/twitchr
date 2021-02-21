@@ -7,12 +7,21 @@
 get_cheermotes(broadcaster_id = NULL, clean_json = TRUE)
 }
 \arguments{
-\item{broadcaster_id}{A numeric. Optional. ID for the broadcaster who might own specialized Cheermotes.}
+\item{broadcaster_id}{A numeric. ID for the broadcaster who might own specialized Cheermotes.}
 
 \item{clean_json}{A logical. If \code{TRUE}, clean and tidy the data. If \code{FALSE}, return the result of \code{httr::content}.}
 }
 \description{
 Retrieves the list of available Cheermotes, animated emotes to which viewers can assign Bits, to cheer in chat. Cheermotes returned are available throughout Twitch, in all Bits-enabled channels.
+}
+\examples{
+\dontrun{
+twitch_auth()
+
+user <- get_users(login = "TheEatGameLove")
+
+cheermotes <- get_cheermotes(broadcaster_id = user$id)
+}
 }
 \references{
 https://dev.twitch.tv/docs/api/reference#get-cheermotes

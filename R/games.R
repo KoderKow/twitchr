@@ -1,6 +1,6 @@
 #' Get Games
 #'
-#' Gets game information by game ID or name.
+#' Gets game information by game ID or name. For a query to be valid, `name` and/or `id` must be specified.
 #'
 #' @param id A character. Game ID. At most 100 id values can be specified.
 #' @param name A character. Game name. The name must be an exact match. For example, “Pokemon” will not return a list of Pokemon games; instead, query any specific Pokemon games in which you are interested. At most 100 name values can be specified.
@@ -10,6 +10,12 @@
 #' @export
 #'
 #' @references https://dev.twitch.tv/docs/api/reference#get-games
+#' @examples
+#' \dontrun {
+#' twitch_auth()
+#'
+#' games <- get_games(name = c("Battletoads", "Stardew Valley"))
+#' }
 get_games <- function(
   id = NULL,
   name = NULL,
@@ -38,6 +44,12 @@ get_games <- function(
 #' @export
 #'
 #' @references https://dev.twitch.tv/docs/api/reference#get-top-games
+#' @examples
+#' \dontrun {
+#' twitch_auth()
+#'
+#' top_games <- get_top_games()
+#' }
 get_top_games <- function(
   after = NULL,
   before = NULL,

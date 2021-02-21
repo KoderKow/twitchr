@@ -1,6 +1,6 @@
 #' Get Clips
 #'
-#' Gets clip information by clip ID (one or more), broadcaster ID (one only), or game ID (one only). Note: The clips service returns a maximum of 1000 clips.
+#' Gets clip information by clip ID (one or more), broadcaster ID (one only), or game ID (one only). Note: The clips service returns a maximum of 1000 clips. For a query to be valid, `id` (one or more), `broadcaster_id`, or `game_id` must be specified. You may specify only one of these parameters.
 #'
 #' @param broadcaster_id A character. ID of the broadcaster for whom clips are returned. The number of clips returned is determined by the first query-string parameter (default: 20). Results are ordered by view count.
 #' @param game_id A character. ID of the game for which clips are returned. The number of clips returned is determined by the first query-string parameter (default: 20). Results are ordered by view count.
@@ -16,6 +16,14 @@
 #' @export
 #'
 #' @references https://dev.twitch.tv/docs/api/reference#get-clips
+#' @examples
+#' \dontrun{
+#' twitch_auth()
+#'
+#' user <- get_users(login = "TheEatGameLove")
+#'
+#' clips <- get_clips(broadcaster_id = user$id)
+#' }
 get_clips <- function(
   broadcaster_id = NULL,
   game_id = NULL,
@@ -45,7 +53,7 @@ get_clips <- function(
 
 #' Get All Clips
 #'
-#' Gets clip information by broadcaster ID (one only), or game ID (one only). This function will handle pagination with `get_clips` automatically.
+#' Gets clip information by broadcaster ID (one only), or game ID (one only). This function will handle pagination with `get_clips` automatically. Using at least one of the following parameters is required; `broadcaster_id` or `game_id`.
 #'
 #' @inheritParams get_clips
 #'
@@ -53,6 +61,14 @@ get_clips <- function(
 #' @export
 #'
 #' @references https://dev.twitch.tv/docs/api/reference#get-clips
+#' @examples
+#' \dontrun{
+#' twitch_auth()
+#'
+#' user <- get_users(login = "TheEatGameLove")
+#'
+#' all_clips <- get_all_clips(broadcaster_id = user$id)
+#' }
 get_all_clips <- function(
   broadcaster_id = NULL,
   game_id = NULL,

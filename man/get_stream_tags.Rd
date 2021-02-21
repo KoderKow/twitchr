@@ -9,9 +9,9 @@ get_stream_tags(broadcaster_id = NULL, language = "en-us", clean_json = TRUE)
 \arguments{
 \item{broadcaster_id}{A character. ID of the stream thats tags are going to be fetched.}
 
-\item{clean_json}{A logical. If \code{TRUE}, clean and tidy the data. If \code{FALSE}, return the result of \code{httr::content}.}
+\item{language}{A character. Wanted language. Need to list languages here...}
 
-\item{A}{character. Wanted language. Need to list languages here...}
+\item{clean_json}{A logical. If \code{TRUE}, clean and tidy the data. If \code{FALSE}, return the result of \code{httr::content}.}
 }
 \description{
 Gets the list of tags for a specified stream (channel).

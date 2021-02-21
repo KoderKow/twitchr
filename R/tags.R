@@ -31,7 +31,7 @@ get_all_stream_tags <- function(
 #' Gets the list of tags for a specified stream (channel).
 #'
 #' @param broadcaster_id A character. ID of the stream thats tags are going to be fetched.
-#' @param A character. Wanted language. Need to list languages here...
+#' @param language A character. Wanted language. Need to list languages here...
 #' @inheritParams get_cheermotes
 #'
 #' @family Tags

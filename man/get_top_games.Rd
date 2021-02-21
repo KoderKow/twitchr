@@ -18,6 +18,13 @@ get_top_games(after = NULL, before = NULL, first = 20, clean_json = TRUE)
 \description{
 Gets games sorted by number of current viewers on Twitch, most popular first.
 }
+\examples{
+\dontrun {
+twitch_auth()
+
+top_games <- get_top_games()
+}
+}
 \references{
 https://dev.twitch.tv/docs/api/reference#get-top-games
 }

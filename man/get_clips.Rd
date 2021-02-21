@@ -36,7 +36,16 @@ get_clips(
 \item{clean_json}{A logical. If \code{TRUE}, clean and tidy the data. If \code{FALSE}, return the result of \code{httr::content}.}
 }
 \description{
-Gets clip information by clip ID (one or more), broadcaster ID (one only), or game ID (one only). Note: The clips service returns a maximum of 1000 clips.
+Gets clip information by clip ID (one or more), broadcaster ID (one only), or game ID (one only). Note: The clips service returns a maximum of 1000 clips. For a query to be valid, \code{id} (one or more), \code{broadcaster_id}, or \code{game_id} must be specified. You may specify only one of these parameters.
+}
+\examples{
+\dontrun{
+twitch_auth()
+
+user <- get_users(login = "TheEatGameLove")
+
+clips <- get_clips(broadcaster_id = user$id)
+}
 }
 \references{
 https://dev.twitch.tv/docs/api/reference#get-clips

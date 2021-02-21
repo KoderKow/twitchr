@@ -14,7 +14,14 @@ get_games(id = NULL, name = NULL, clean_json = TRUE)
 \item{clean_json}{A logical. If \code{TRUE}, clean and tidy the data. If \code{FALSE}, return the result of \code{httr::content}.}
 }
 \description{
-Gets game information by game ID or name.
+Gets game information by game ID or name. For a query to be valid, \code{name} and/or \code{id} must be specified.
+}
+\examples{
+\dontrun {
+twitch_auth()
+
+games <- get_games(name = c("Battletoads", "Stardew Valley"))
+}
 }
 \references{
 https://dev.twitch.tv/docs/api/reference#get-games
