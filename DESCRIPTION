@@ -12,7 +12,6 @@ License: MIT + file LICENSE
 URL: https://github.com/KoderKow/twitchr
 BugReports: https://github.com/KoderKow/twitchr/issues
 Imports: 
-    assertthat,
     dplyr,
     glue,
     httr,
@@ -21,6 +20,8 @@ Imports:
     purrr,
     rlang,
     stringr,
+    tibble,
+    tidyr,
     usethis
 Suggests: 
     knitr,
