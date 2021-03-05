@@ -19,6 +19,34 @@ R wrapper for the Twitch API.
 remotes::install_github("koderkow/twitchr")
 ```
 
+## Setup
+
+### Steps
+
+1.  Go to <https://dev.twitch.tv/login>
+2.  Login with Twitch
+3.  Click *Register Your Application*
+4.  Fill out the App information
+    -   Name: Name of the app. Something to label it for the own
+        personal use
+    -   OAuth Redirect URLs: Fill this in if one if you have one. If not
+        put `http://localhost`
+    -   Category: Pick related category such as *Analytics Tool*
+5.  Click Create
+6.  On the new app, click *Manage*
+7.  This page will have the Client ID and Client Secret
+8.  Open the `.Renviron` to add these values
+    -   Run `usethis::edit_r_environ()` in the RStudio R console
+9.  Enter the two key values into this file with the following key names
+    -   TWITCH\_CLIENT\_ID=YOUR CLIENT ID
+    -   TWITCH\_SECRET=YOUR SECRET
+10. Restart the RStudio session
+
+### More Information
+
+Read about getting authorization tokens
+[here](https://dev.twitch.tv/docs/authentication).
+
 ## Examples
 
 ``` r
@@ -30,64 +58,45 @@ twitch_auth()
 ```
 
 ``` r
-cheermotes <- get_cheermotes(broadcaster_id = 41245072)
+user <- get_users(login = "theeatgamelove")
 
-cheermotes
-#> # A tibble: 180 x 30
-#>    prefix type  order last_updated is_charitable tiers_min_bits tiers_id
-#>    <chr>  <chr> <int> <chr>        <lgl>                  <int> <chr>   
-#>  1 Cheer  glob~     1 2018-05-22T~ FALSE                      1 1       
-#>  2 Cheer  glob~     1 2018-05-22T~ FALSE                    100 100     
-#>  3 Cheer  glob~     1 2018-05-22T~ FALSE                   1000 1000    
-#>  4 Cheer  glob~     1 2018-05-22T~ FALSE                   5000 5000    
-#>  5 Cheer  glob~     1 2018-05-22T~ FALSE                  10000 10000   
-#>  6 Doodl~ glob~     1 2018-05-22T~ FALSE                      1 1       
-#>  7 Doodl~ glob~     1 2018-05-22T~ FALSE                    100 100     
-#>  8 Doodl~ glob~     1 2018-05-22T~ FALSE                   1000 1000    
-#>  9 Doodl~ glob~     1 2018-05-22T~ FALSE                   5000 5000    
-#> 10 Doodl~ glob~     1 2018-05-22T~ FALSE                  10000 10000   
-#> # ... with 170 more rows, and 23 more variables: tiers_color <chr>,
-#> #   tiers_images_dark_animated_1 <chr>, tiers_images_dark_animated_1_5 <chr>,
-#> #   tiers_images_dark_animated_2 <chr>, tiers_images_dark_animated_3 <chr>,
-#> #   tiers_images_dark_animated_4 <chr>, tiers_images_dark_static_1 <chr>,
-#> #   tiers_images_dark_static_1_5 <chr>, tiers_images_dark_static_2 <chr>,
-#> #   tiers_images_dark_static_3 <chr>, tiers_images_dark_static_4 <chr>,
-#> #   tiers_images_light_animated_1 <chr>, tiers_images_light_animated_1_5 <chr>,
-#> #   tiers_images_light_animated_2 <chr>, tiers_images_light_animated_3 <chr>,
-#> #   tiers_images_light_animated_4 <chr>, tiers_images_light_static_1 <chr>,
-#> #   tiers_images_light_static_1_5 <chr>, tiers_images_light_static_2 <chr>,
-#> #   tiers_images_light_static_3 <chr>, tiers_images_light_static_4 <chr>,
-#> #   tiers_can_cheer <lgl>, tiers_show_in_bits_card <lgl>
+user
+#> # A tibble: 1 x 10
+#>   id    login display_name type  broadcaster_type description profile_image_u~
+#>   <chr> <chr> <chr>        <chr> <chr>            <chr>       <chr>           
+#> 1 6138~ thee~ TheEatGameL~ ""    affiliate        Hello frie~ https://static-~
+#> # ... with 3 more variables: offline_image_url <chr>, view_count <int>,
+#> #   created_at <dttm>
 ```
 
 ``` r
-videos <- get_videos(user_id = 27699280)
+videos <- get_videos(user_id = user$id)
 
 videos
 #> $data
-#> # A tibble: 20 x 14
-#>    id    user_id user_name title description created_at         
-#>    <chr> <chr>   <chr>     <chr> <chr>       <dttm>             
-#>  1 8187~ 276992~ KoderKow  We P~ "Kyle and ~ 2020-11-28 17:40:21
-#>  2 8183~ 276992~ KoderKow  [HL0~ "Why did I~ 2020-11-28 08:49:13
-#>  3 8183~ 276992~ KoderKow  [HL0~ "I run int~ 2020-11-28 08:49:13
-#>  4 8183~ 276992~ KoderKow  [HL0~ "I make fu~ 2020-11-28 08:49:13
-#>  5 8183~ 276992~ KoderKow  [HL0~ "I get coc~ 2020-11-28 08:49:13
-#>  6 8183~ 276992~ KoderKow  [HL0~ "This tree~ 2020-11-28 08:49:13
-#>  7 8183~ 276992~ KoderKow  [HL0~ "Our favor~ 2020-11-28 08:49:13
-#>  8 8183~ 276992~ KoderKow  [HL0~ "Kyle and ~ 2020-11-28 08:03:31
-#>  9 8183~ 276992~ KoderKow  [HL0~ "We think ~ 2020-11-28 08:03:31
-#> 10 8183~ 276992~ KoderKow  [HL0~ "I win the~ 2020-11-28 07:44:37
-#> 11 8183~ 276992~ KoderKow  [HL0~ "I feel so~ 2020-11-28 07:44:37
-#> 12 8183~ 276992~ KoderKow  [HL0~ "Kyle defe~ 2020-11-28 07:44:37
-#> 13 8183~ 276992~ KoderKow  [HL0~ "Kamek rui~ 2020-11-28 07:44:37
-#> 14 8183~ 276992~ KoderKow  [HL0~ "I dominat~ 2020-11-28 07:44:37
-#> 15 8183~ 276992~ KoderKow  [HL0~ "I realize~ 2020-11-28 07:44:37
-#> 16 8183~ 276992~ KoderKow  [HL0~ "Lol she d~ 2020-11-28 07:44:37
-#> 17 8183~ 276992~ KoderKow  [HL0~ "I cleared~ 2020-11-28 07:44:37
-#> 18 8183~ 276992~ KoderKow  [HL0~ "Kyle watc~ 2020-11-28 07:44:37
-#> 19 8183~ 276992~ KoderKow  [HL0~ "Kyle gets~ 2020-11-28 07:44:37
-#> 20 8183~ 276992~ KoderKow  [HL0~ "I freakin~ 2020-11-28 07:44:37
+#> # A tibble: 20 x 15
+#>    id    user_id user_login user_name title description created_at         
+#>    <chr> <chr>   <chr>      <chr>     <chr> <chr>       <dttm>             
+#>  1 9360~ 613890~ theeatgam~ TheEatGa~ "Sec~ ""          2021-03-03 23:57:37
+#>  2 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#>  3 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#>  4 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#>  5 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#>  6 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#>  7 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#>  8 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#>  9 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#> 10 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#> 11 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#> 12 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#> 13 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#> 14 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#> 15 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#> 16 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#> 17 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#> 18 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#> 19 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
+#> 20 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22
 #> # ... with 8 more variables: published_at <dttm>, url <chr>,
 #> #   thumbnail_url <chr>, viewable <chr>, view_count <int>, language <chr>,
 #> #   type <chr>, duration <chr>
