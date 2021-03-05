@@ -28,4 +28,10 @@ users <- get_users(login = "TheEatGameLove")
 \references{
 https://dev.twitch.tv/docs/api/reference#get-users
 }
+\seealso{
+Other Users: 
+\code{\link{get_all_follows}()},
+\code{\link{get_chatters}()},
+\code{\link{get_follows}()}
+}
 \concept{Users}

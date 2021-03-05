@@ -10,8 +10,11 @@
 #' @export
 #'
 #' @references https://dev.twitch.tv/docs/api/reference#get-games
+#'
 #' @examples
-#' \dontrun {
+#' \dontrun{
+#' library(twitchr)
+#'
 #' twitch_auth()
 #'
 #' games <- get_games(name = c("Battletoads", "Stardew Valley"))
@@ -45,7 +48,9 @@ get_games <- function(
 #'
 #' @references https://dev.twitch.tv/docs/api/reference#get-top-games
 #' @examples
-#' \dontrun {
+#' \dontrun{
+#' library(twitchr)
+#'
 #' twitch_auth()
 #'
 #' top_games <- get_top_games()

@@ -19,7 +19,7 @@ make_request <- function(
 
   check_status(response)
 
-  response_content <<- httr::content(response)
+  response_content <- httr::content(response)
 
   if (length(response_content$data) == 0) {
     usethis::ui_warn("The request is successful, however, there is no data in the response.")
@@ -75,6 +75,10 @@ make_request <- function(
       result <- clean_search_categories(response_content)
     }
 
+    if (end_point == "users/follows") {
+      result <- clean_get_follows(response_content)
+    }
+
   } else {
     result <- response_content
   }
@@ -125,9 +129,11 @@ format_parameters <- function(...) {
 
 #' Keep names while flattening a named list
 #'
-#' Source taken from `rlist::list.flatten`. Didn't want to load dependency. Added a step to clean the names to snake case.
+#' Source taken from the package rlist's list.flatten. Didn't want to load dependency. Added a step to clean the names to snake case.
 #'
-#' @inheritParams rlist::list.flatten
+#' @param x list
+#' @param use.names	logical. Should the names of x be kept?
+#' @param classes	A character vector of class names, or "ANY" to match any class.
 flatten_keep_names <- function (x, use.names = TRUE, classes = "ANY") {
   len <- sum(rapply(x, function(x) 1L, classes = classes))
   y <- vector("list", len)
@@ -172,7 +178,8 @@ date_formatter <- function(.data) {
         .cols = c(
           dplyr::matches("created_at"),
           dplyr::matches("published_at"),
-          dplyr::matches("last_updated")
+          dplyr::matches("last_updated"),
+          dplyr::matches("followed_at")
         ),
         .fns = lubridate::ymd_hms
       )

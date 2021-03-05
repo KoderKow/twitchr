@@ -17,7 +17,9 @@ get_games(id = NULL, name = NULL, clean_json = TRUE)
 Gets game information by game ID or name. For a query to be valid, \code{name} and/or \code{id} must be specified.
 }
 \examples{
-\dontrun {
+\dontrun{
+library(twitchr)
+
 twitch_auth()
 
 games <- get_games(name = c("Battletoads", "Stardew Valley"))

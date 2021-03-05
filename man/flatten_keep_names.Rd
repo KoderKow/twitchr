@@ -7,12 +7,12 @@
 flatten_keep_names(x, use.names = TRUE, classes = "ANY")
 }
 \arguments{
-\item{x}{\code{list}}
+\item{x}{list}
 
-\item{use.names}{\code{logical}. Should the names of \code{x} be kept?}
+\item{use.names}{logical. Should the names of x be kept?}
 
 \item{classes}{A character vector of class names, or "ANY" to match any class.}
 }
 \description{
-Source taken from \code{rlist::list.flatten}. Didn't want to load dependency. Added a step to clean the names to snake case.
+Source taken from the package rlist's list.flatten. Didn't want to load dependency. Added a step to clean the names to snake case.
 }
