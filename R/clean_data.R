@@ -226,3 +226,22 @@ clean_search_categories <- function(response_content) {
   return(return_list)
 }
 
+#' Clean the Response From User Follows
+#'
+#' @inheritParams clean_videos
+#'
+#' @return A named list containing: data, a Clean and tidy tibble. pagination, cursor for pagination.
+clean_get_follows <- function(response_content) {
+  data_clean <-
+    response_content %>%
+    purrr::pluck("data") %>%
+    dplyr::bind_rows() %>%
+    date_formatter()
+
+  return_list <- list(
+    data = data_clean,
+    pagination = response_content$pagination$cursor
+  )
+
+  return(return_list)
+}
