@@ -4,9 +4,6 @@
     <loc>https://koderkow.github.io/twitchr/index.html</loc>
   </url>
   <url>
-    <loc>https://koderkow.github.io/twitchr/reference/check_status.html</loc>
-  </url>
-  <url>
     <loc>https://koderkow.github.io/twitchr/reference/clean_bits_cheermotes.html</loc>
   </url>
   <url>
@@ -38,15 +35,6 @@
   </url>
   <url>
     <loc>https://koderkow.github.io/twitchr/reference/clean_videos.html</loc>
-  </url>
-  <url>
-    <loc>https://koderkow.github.io/twitchr/reference/date_formatter.html</loc>
-  </url>
-  <url>
-    <loc>https://koderkow.github.io/twitchr/reference/flatten_keep_names.html</loc>
-  </url>
-  <url>
-    <loc>https://koderkow.github.io/twitchr/reference/format_parameters.html</loc>
   </url>
   <url>
     <loc>https://koderkow.github.io/twitchr/reference/get_all_clips.html</loc>
@@ -85,13 +73,7 @@
     <loc>https://koderkow.github.io/twitchr/reference/get_videos.html</loc>
   </url>
   <url>
-    <loc>https://koderkow.github.io/twitchr/reference/make_request.html</loc>
-  </url>
-  <url>
     <loc>https://koderkow.github.io/twitchr/reference/pipe.html</loc>
-  </url>
-  <url>
-    <loc>https://koderkow.github.io/twitchr/reference/quiet_pipe.html</loc>
   </url>
   <url>
     <loc>https://koderkow.github.io/twitchr/reference/search_categories.html</loc>

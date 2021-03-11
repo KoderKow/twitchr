@@ -79,8 +79,13 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
+<div id="from-github" class="section level3">
+<h3 class="hasAnchor">
+<a href="#from-github" class="anchor"></a>From Github</h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"koderkow/twitchr"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html">requireNamespace</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span><span class="op">)</span><span class="op">{</span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span><span class="op">}</span>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"koderkow/twitchr"</span><span class="op">)</span></code></pre></div>
+</div>
 </div>
 <div id="setup" class="section level2">
 <h2 class="hasAnchor">
@@ -114,8 +119,8 @@
 </li>
 <li>Enter the two key values into this file with the following key names
 <ul>
-<li>TWITCH_CLIENT_ID=YOUR CLIENT ID</li>
-<li>TWITCH_SECRET=YOUR SECRET</li>
+<li><code>TWITCH_CLIENT_ID=YOUR CLIENT ID</code></li>
+<li><code>TWITCH_SECRET=YOUR SECRET</code></li>
 </ul>
 </li>
 <li>Restart the RStudio session</li>
@@ -132,52 +137,54 @@
 <a href="#examples" class="anchor"></a>Examples</h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://koderkow.github.io/twitchr">twitchr</a></span><span class="op">)</span></code></pre></div>
+<div id="authorize" class="section level3">
+<h3 class="hasAnchor">
+<a href="#authorize" class="anchor"></a>Authorize</h3>
+<p>Get auth token by using <code><a href="reference/twitch_auth.html">twitch_auth()</a></code>. This will be appended to future API calls</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/twitch_auth.html">twitch_auth</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="get-user-information" class="section level3">
+<h3 class="hasAnchor">
+<a href="#get-user-information" class="anchor"></a>Get user information</h3>
+<p>Look up a user by their display name to get user information. This is userful to obtain <code>broadcaster_id</code> for other functions</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">user</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_users.html">get_users</a></span><span class="op">(</span>login <span class="op">=</span> <span class="st">"theeatgamelove"</span><span class="op">)</span>
 
 <span class="va">user</span>
 <span class="co">#&gt; # A tibble: 1 x 10</span>
-<span class="co">#&gt;   id    login display_name type  broadcaster_type description profile_image_u~</span>
-<span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;            &lt;chr&gt;       &lt;chr&gt;           </span>
-<span class="co">#&gt; 1 6138~ thee~ TheEatGameL~ ""    affiliate        Hello frie~ https://static-~</span>
-<span class="co">#&gt; # ... with 3 more variables: offline_image_url &lt;chr&gt;, view_count &lt;int&gt;,</span>
+<span class="co">#&gt;   id     login  display_name type  broadcaster_type description profile_image_u…</span>
+<span class="co">#&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;            &lt;chr&gt;       &lt;chr&gt;           </span>
+<span class="co">#&gt; 1 61389… theea… TheEatGameL… ""    affiliate        Hello frie… https://static-…</span>
+<span class="co">#&gt; # … with 3 more variables: offline_image_url &lt;chr&gt;, view_count &lt;int&gt;,</span>
 <span class="co">#&gt; #   created_at &lt;dttm&gt;</span></code></pre></div>
+</div>
+<div id="get-videos" class="section level3">
+<h3 class="hasAnchor">
+<a href="#get-videos" class="anchor"></a>Get Videos</h3>
+<p>Obtain a users recent videos</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">videos</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_videos.html">get_videos</a></span><span class="op">(</span>user_id <span class="op">=</span> <span class="va">user</span><span class="op">$</span><span class="va">id</span><span class="op">)</span>
-
-<span class="va">videos</span>
-<span class="co">#&gt; $data</span>
-<span class="co">#&gt; # A tibble: 20 x 15</span>
-<span class="co">#&gt;    id    user_id user_login user_name title description created_at         </span>
-<span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;       &lt;dttm&gt;             </span>
-<span class="co">#&gt;  1 9360~ 613890~ theeatgam~ TheEatGa~ "Sec~ ""          2021-03-03 23:57:37</span>
-<span class="co">#&gt;  2 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt;  3 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt;  4 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt;  5 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt;  6 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt;  7 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt;  8 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt;  9 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt; 10 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt; 11 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt; 12 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt; 13 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt; 14 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt; 15 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt; 16 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt; 17 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt; 18 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt; 19 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt; 20 9346~ 613890~ theeatgam~ TheEatGa~ "[20~ ""          2021-03-02 21:56:22</span>
-<span class="co">#&gt; # ... with 8 more variables: published_at &lt;dttm&gt;, url &lt;chr&gt;,</span>
-<span class="co">#&gt; #   thumbnail_url &lt;chr&gt;, viewable &lt;chr&gt;, view_count &lt;int&gt;, language &lt;chr&gt;,</span>
-<span class="co">#&gt; #   type &lt;chr&gt;, duration &lt;chr&gt;</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $pagination</span>
-<span class="co">#&gt; [1] "eyJiIjpudWxsLCJhIjp7Ik9mZnNldCI6MjB9fQ"</span></code></pre></div>
+<code class="sourceCode R"><span class="va">videos</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_videos.html">get_videos</a></span><span class="op">(</span>user_id <span class="op">=</span> <span class="va">user</span><span class="op">$</span><span class="va">id</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="get-followers" class="section level3">
+<h3 class="hasAnchor">
+<a href="#get-followers" class="anchor"></a>Get Followers</h3>
+<p>Display the followers of a channel</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">followers</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_follows.html">get_follows</a></span><span class="op">(</span>to_id <span class="op">=</span> <span class="va">user</span><span class="op">$</span><span class="va">id</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="get-chatters" class="section level3">
+<h3 class="hasAnchor">
+<a href="#get-chatters" class="anchor"></a>Get chatters</h3>
+<p>Display who is currently in a broadcasters chat</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">chatters</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/get_chatters.html">get_chatters</a></span><span class="op">(</span><span class="st">"theeatgamelove"</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="other-functions" class="section level3">
+<h3 class="hasAnchor">
+<a href="#other-functions" class="anchor"></a>Other functions</h3>
+<p>I have covered most of the Twitch API endpoints which can be viewed <a href="https://koderkow.github.io/twitchr/reference/index.html">here</a>. If there are any you would like added please create an issue! :)</p>
+</div>
 </div>
 <div id="thanks-to" class="section level2">
 <h2 class="hasAnchor">
