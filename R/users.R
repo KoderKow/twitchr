@@ -145,7 +145,7 @@ get_chatters <- function(broadcaster) {
     httr::GET(chatters_header) %>%
     httr::content() %>%
     purrr::pluck("chatters") %>%
-    list.flatten() %>%
+    flatten_keep_names() %>%
     tibble::enframe("broadcaster_type", "login") %>%
     tidyr::unnest(login) %>%
     dplyr::mutate(broadcaster_type = stringr::str_remove(broadcaster_type, "s\\d+$"))

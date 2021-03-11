@@ -3,6 +3,8 @@
 #' @param end_point A character. The endpoint to make a request to.
 #' @param ... Named elements that will serve as parameters that will be used during the `httr::GET()` request.
 #' @param clean_json A logical. If `TRUE`, clean and tidy the data. If `FALSE`, return the result of `httr::content`.
+#'
+#' @noRd
 make_request <- function(
   end_point,
   ...,
@@ -91,6 +93,8 @@ make_request <- function(
 #' @param response A response objct. Generally generated from `httr::GET()` or `httr::POST()`.
 #'
 #' @return An error message if status code is not 200. Invisible `NULL` if status code is 200.
+#'
+#' @noRd
 check_status <- function(response) {
   status_code <- httr::status_code(response)
 
@@ -107,6 +111,8 @@ check_status <- function(response) {
 #' @param ... Named elements that are wanted parameters to an end point.
 #'
 #' @return A character string in URL ready format.
+#'
+#' @noRd
 format_parameters <- function(...) {
   parameters <- list(...) %>%
     purrr::compact()
@@ -134,6 +140,9 @@ format_parameters <- function(...) {
 #' @param x list
 #' @param use.names	logical. Should the names of x be kept?
 #' @param classes	A character vector of class names, or "ANY" to match any class.
+#' @references https://github.com/renkun-ken/rlist
+#'
+#' @noRd
 flatten_keep_names <- function (x, use.names = TRUE, classes = "ANY") {
   len <- sum(rapply(x, function(x) 1L, classes = classes))
   y <- vector("list", len)
@@ -155,21 +164,21 @@ flatten_keep_names <- function (x, use.names = TRUE, classes = "ANY") {
 #' @param lhs A value or the magrittr placeholder.
 #' @param rhs A function call using the magrittr semantics.
 #'
-#' @rdname quiet_pipe
-#' @export
+#' @references https://stackoverflow.com/a/55668716
+#'
+#' @noRd
 `%shh%` <- function(lhs, rhs) {
   w <- options()$warn
   on.exit(options(warn = w))
   options(warn = -1)
-  lhs_quo = rlang::quo_name(rlang::enquo(lhs))
-  rhs_quo = rlang::quo_name(rlang::enquo(rhs))
-  pipe = paste(lhs_quo, "%>%", rhs_quo)
-  return(suppressMessages(rlang::eval_tidy(rlang::parse_quo(pipe, env = rlang::caller_env()))))
+  suppressMessages(eval.parent(substitute(lhs %>% rhs)))
 }
 
 #' Wrapper for Formatting Date Times
 #'
 #' @param .data A tibble. Data to be formatted.
+#'
+#' @noRd
 date_formatter <- function(.data) {
   d <-
     .data %>%
