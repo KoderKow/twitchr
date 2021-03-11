@@ -9,7 +9,8 @@ Authors@R:
 Description: Interact with Twitch through the Twitch API
     <https://dev.twitch.tv/docs/api/>.
 License: MIT + file LICENSE
-URL: https://koderkow.github.io/twitchr, https://github.com/KoderKow/twitchr
+URL: https://koderkow.github.io/twitchr,
+    https://github.com/KoderKow/twitchr
 BugReports: https://github.com/KoderKow/twitchr/issues
 Imports: 
     dplyr,
@@ -18,14 +19,10 @@ Imports:
     lubridate,
     magrittr,
     purrr,
-    rlang,
     stringr,
     tibble,
     tidyr,
     usethis
-Suggests: 
-    knitr,
-    rmarkdown
 VignetteBuilder: 
     knitr
 Encoding: UTF-8
