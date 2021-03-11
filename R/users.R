@@ -110,7 +110,7 @@ get_all_follows <- function(
       to_id = to_id,
       first = 100,
       after = follows$pagination
-      )
+    )
 
     d <-
       d %>%
@@ -135,9 +135,14 @@ get_all_follows <- function(
 #' chatters <- get_chatters("theeatgamelove")
 #' }
 get_chatters <- function(broadcaster) {
-  viewers <-
+  chatters_header <- httr::add_headers(
+    'Client-ID' = "",
+    Authorization = ""
+  )
+
+  chatters <-
     glue::glue("https://tmi.twitch.tv/group/user/{broadcaster}/chatters") %>%
-    httr::GET() %>%
+    httr::GET(chatters_header) %>%
     httr::content() %>%
     purrr::pluck("chatters") %>%
     list.flatten() %>%
@@ -145,5 +150,5 @@ get_chatters <- function(broadcaster) {
     tidyr::unnest(login) %>%
     dplyr::mutate(broadcaster_type = stringr::str_remove(broadcaster_type, "s\\d+$"))
 
-  return(viewers)
+  return(chatters)
 }
