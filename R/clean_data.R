@@ -163,7 +163,7 @@ tag_cleaner <- function(data_raw_element) {
 #' @return A named list containing: data, a Clean and tidy tibble. pagination, cursor for pagination.
 clean_get_all_stream_tags <- function(response_content) {
 
-  data_clean <<-
+  data_clean <-
     response_content %>%
     purrr::pluck("data") %>%
     purrr::map_dfr(get_all_tags_response_cleaner)
