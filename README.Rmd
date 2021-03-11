@@ -24,7 +24,10 @@ R wrapper for the Twitch API.
 
 ## Installation
 
+### From Github
+
 ```{r, eval=FALSE}
+if (!requireNamespace("remotes")){install.packages("remotes")}
 remotes::install_github("koderkow/twitchr")
 ```
 
@@ -59,9 +62,17 @@ Read about getting authorization tokens [here](https://dev.twitch.tv/docs/authen
 library(twitchr)
 ```
 
+### Authorize
+
+Get auth token by using `twitch_auth()`. This will be appended to future API calls
+
 ```{r}
 twitch_auth()
 ```
+
+### Get user information
+
+Look up a user by their display name to get user information. This is userful to obtain `broadcaster_id` for other functions
 
 ```{r}
 user <- get_users(login = "theeatgamelove")
@@ -69,11 +80,30 @@ user <- get_users(login = "theeatgamelove")
 user
 ```
 
+### Get Videos
+
+Obtain a users recent videos 
+
 ```{r}
 videos <- get_videos(user_id = user$id)
-
-videos
 ```
+
+### Get Followers
+
+Display the followers of a channel
+
+```{r}
+followers <- get_follows(to_id = user$id)
+```
+
+### Get chatters
+
+Display who is currently in a broadcasters chat
+
+```{r}
+chatters <- get_chatters("theeatgamelove")
+```
+
 
 ## Thanks to
 
