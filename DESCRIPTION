@@ -1,6 +1,6 @@
 Package: twitchr
 Title: R Interface for the Twitch API
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person(given = "Kyle",
            family = "Harris",
@@ -9,7 +9,7 @@ Authors@R:
 Description: Interact with Twitch through the Twitch API
     <https://dev.twitch.tv/docs/api/>.
 License: MIT + file LICENSE
-URL: https://github.com/KoderKow/twitchr
+URL: https://koderkow.github.io/twitchr, https://github.com/KoderKow/twitchr
 BugReports: https://github.com/KoderKow/twitchr/issues
 Imports: 
     dplyr,
