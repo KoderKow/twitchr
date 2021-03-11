@@ -11,6 +11,9 @@ get_cheermotes(broadcaster_id = NULL, clean_json = TRUE)
 
 \item{clean_json}{A logical. If \code{TRUE}, clean and tidy the data. If \code{FALSE}, return the result of \code{httr::content}.}
 }
+\value{
+A tibble data frame of cheermote data.
+}
 \description{
 Retrieves the list of available Cheermotes, animated emotes to which viewers can assign Bits, to cheer in chat. Cheermotes returned are available throughout Twitch, in all Bits-enabled channels.
 }

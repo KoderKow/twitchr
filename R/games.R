@@ -9,6 +9,8 @@
 #' @family Games
 #' @export
 #'
+#' @return A tibble data frame of game data.
+#'
 #' @references https://dev.twitch.tv/docs/api/reference#get-games
 #'
 #' @examples
@@ -45,6 +47,8 @@ get_games <- function(
 #'
 #' @family Games
 #' @export
+#'
+#' @return A tibble data frame of top game data.
 #'
 #' @references https://dev.twitch.tv/docs/api/reference#get-top-games
 #' @examples

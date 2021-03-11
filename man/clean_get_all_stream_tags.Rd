@@ -4,7 +4,7 @@
 \alias{clean_get_all_stream_tags}
 \title{Clean the Response From Search Channels}
 \usage{
-clean_get_all_stream_tags(response_content, filter_language)
+clean_get_all_stream_tags(response_content)
 }
 \arguments{
 \item{response_content}{Content from a HTTP Request. This is expecting to take the output from \code{httr::content()}.}

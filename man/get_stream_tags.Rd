@@ -9,12 +9,26 @@ get_stream_tags(broadcaster_id = NULL, language = "en-us", clean_json = TRUE)
 \arguments{
 \item{broadcaster_id}{A character. ID of the stream thats tags are going to be fetched.}
 
-\item{language}{A character. Wanted language. Need to list languages here...}
+\item{language}{A character. Default \code{en-us} (English US). Options include: bg-bg, cs-cz, da-dk, de-de, el-gr, en-us, es-es, es-mx, fi-fi, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, no-no, pl-pl, pt-br, pt-pt, ro-ro, ru-ru, sk-sk, sv-se, th-th, tr-tr, vi-vn, zh-cn, zh-tw, bg-bg, cs-cz, da-dk, de-de, el-gr, en-us, es-es, es-mx, fi-fi, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, no-no, pl-pl, pt-br, pt-pt, ro-ro, ru-ru, sk-sk, sv-se, th-th, tr-tr, vi-vn, zh-cn, zh-tw, bg-bg, cs-cz, da-dk, de-de, el-gr, en-us, es-es, es-mx, fi-fi, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, no-no, pl-pl, pt-br, pt-pt, ro-ro, ru-ru, sk-sk, sv-se, th-th, tr-tr, vi-vn, zh-cn, zh-tw.}
 
 \item{clean_json}{A logical. If \code{TRUE}, clean and tidy the data. If \code{FALSE}, return the result of \code{httr::content}.}
 }
+\value{
+A tibble data frame of stream tag data.
+}
 \description{
 Gets the list of tags for a specified stream (channel).
+}
+\examples{
+\dontrun{
+library(twitchr)
+
+twitch_auth()
+
+user <- get_users(login = "TheEatGameLove")
+
+tags <- get_stream_tags(broadcaster_id = user$id)
+}
 }
 \references{
 https://dev.twitch.tv/docs/api/reference#get-stream-tags

@@ -15,6 +15,9 @@ get_top_games(after = NULL, before = NULL, first = 20, clean_json = TRUE)
 
 \item{clean_json}{A logical. If \code{TRUE}, clean and tidy the data. If \code{FALSE}, return the result of \code{httr::content}.}
 }
+\value{
+A tibble data frame of top game data.
+}
 \description{
 Gets games sorted by number of current viewers on Twitch, most popular first.
 }

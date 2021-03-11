@@ -68,7 +68,7 @@ make_request <- function(
     }
 
     if (end_point == "streams/tags") {
-      result <- clean_stream_tags(response_content, language)
+      result <- clean_stream_tags(response_content)
     }
 
     if (end_point == "search/categories") {

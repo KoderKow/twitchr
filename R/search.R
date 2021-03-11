@@ -11,7 +11,17 @@
 #' @family Search
 #' @export
 #'
+#' @return A tibble data frame of search channel data.
+#'
 #' @references https://dev.twitch.tv/docs/api/reference#search-channels
+#' @examples
+#' \dontrun{
+#' library(twitchr)
+#'
+#' twitch_auth()
+#'
+#' search_results <- search_channels("theeatgamelove")
+#' }
 search_channels <- function(
   query = NULL,
   first = FALSE,
@@ -39,8 +49,18 @@ search_channels <- function(
 #'
 #' @export
 #'
+#' @return A tibble data frame of search categories data.
+#'
 #' @family Search
 #' @references https://dev.twitch.tv/docs/api/reference#search-categories
+#' @examples
+#' \dontrun{
+#' library(twitchr)
+#'
+#' twitch_auth()
+#'
+#' search_results <- search_channels("fort")
+#' }
 search_categories <- function(
   query = NULL,
   first = NULL,

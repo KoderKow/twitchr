@@ -4,12 +4,10 @@
 \alias{clean_stream_tags}
 \title{Clean Stream Tags}
 \usage{
-clean_stream_tags(response_content, filter_language)
+clean_stream_tags(response_content)
 }
 \arguments{
 \item{response_content}{Content from a HTTP Request. This is expecting to take the output from \code{httr::content()}.}
-
-\item{filter_language}{A character. Language to filter the return of tags.}
 }
 \value{
 Clean and tidy tibble.

@@ -20,6 +20,9 @@ get_all_clips(
 
 \item{started_at}{A character. Starting date/time for returned clips, in RFC3339 format. (The seconds value is ignored.) If this is specified, ended_at also should be specified; otherwise, the ended_at date/time will be 1 week after the started_at value.}
 }
+\value{
+A tibble data frame of clip data.
+}
 \description{
 Gets clip information by broadcaster ID (one only), or game ID (one only). This function will handle pagination with \code{get_clips} automatically. Using at least one of the following parameters is required; \code{broadcaster_id} or \code{game_id}.
 }

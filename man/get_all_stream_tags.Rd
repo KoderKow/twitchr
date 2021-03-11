@@ -8,6 +8,7 @@ get_all_stream_tags(
   after = NULL,
   first = NULL,
   tag_id = NULL,
+  language = "en-us",
   clean_json = TRUE
 )
 }
@@ -18,10 +19,24 @@ get_all_stream_tags(
 
 \item{tag_id}{A character. ID of a tag. Multiple IDs can be specified, separated by ampersands. If provided, only the specified tag(s) is(are) returned. Maximum of 100.}
 
+\item{language}{A character. Default \code{en-us} (English US). Options include: bg-bg, cs-cz, da-dk, de-de, el-gr, en-us, es-es, es-mx, fi-fi, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, no-no, pl-pl, pt-br, pt-pt, ro-ro, ru-ru, sk-sk, sv-se, th-th, tr-tr, vi-vn, zh-cn, zh-tw, bg-bg, cs-cz, da-dk, de-de, el-gr, en-us, es-es, es-mx, fi-fi, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, no-no, pl-pl, pt-br, pt-pt, ro-ro, ru-ru, sk-sk, sv-se, th-th, tr-tr, vi-vn, zh-cn, zh-tw, bg-bg, cs-cz, da-dk, de-de, el-gr, en-us, es-es, es-mx, fi-fi, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, no-no, pl-pl, pt-br, pt-pt, ro-ro, ru-ru, sk-sk, sv-se, th-th, tr-tr, vi-vn, zh-cn, zh-tw.}
+
 \item{clean_json}{A logical. If \code{TRUE}, clean and tidy the data. If \code{FALSE}, return the result of \code{httr::content}.}
+}
+\value{
+A tibble data frame of stream tag data.
 }
 \description{
 Get All Stream Tags
+}
+\examples{
+\dontrun{
+library(twitchr)
+
+twitch_auth()
+
+tags <- get_all_stream_tags(first = 3)
+}
 }
 \references{
 https://dev.twitch.tv/docs/api/reference#get-all-stream-tags

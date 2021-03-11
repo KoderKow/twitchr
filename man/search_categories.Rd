@@ -15,8 +15,20 @@ search_categories(query = NULL, first = NULL, after = NULL, clean_json = TRUE)
 
 \item{clean_json}{A logical. If \code{TRUE}, clean and tidy the data. If \code{FALSE}, return the result of \code{httr::content}.}
 }
+\value{
+A tibble data frame of search categories data.
+}
 \description{
 Returns a list of games or categories that match the query via name either entirely or partially.
+}
+\examples{
+\dontrun{
+library(twitchr)
+
+twitch_auth()
+
+search_results <- search_channels("fort")
+}
 }
 \references{
 https://dev.twitch.tv/docs/api/reference#search-categories

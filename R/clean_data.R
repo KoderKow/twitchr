@@ -162,13 +162,12 @@ tag_cleaner <- function(data_raw_element) {
 #' @param filter_language A character. Language to filter the return of tags.
 #'
 #' @return A named list containing: data, a Clean and tidy tibble. pagination, cursor for pagination.
-clean_get_all_stream_tags <- function(response_content, filter_language) {
+clean_get_all_stream_tags <- function(response_content) {
 
-  data_clean <-
+  data_clean <<-
     response_content %>%
     purrr::pluck("data") %>%
-    purrr::map_dfr(get_all_tags_response_cleaner) %>%
-    dplyr::filter(language == filter_language)
+    purrr::map_dfr(get_all_tags_response_cleaner)
 
   return_list <- list(
     data = data_clean,
@@ -197,12 +196,11 @@ get_all_tags_response_cleaner <- function(data_raw_element) {
 #' @inheritParams clean_get_all_stream_tags
 #'
 #' @return Clean and tidy tibble.
-clean_stream_tags <- function(response_content, filter_language) {
+clean_stream_tags <- function(response_content) {
   data_clean <-
     response_content %>%
     purrr::pluck("data") %>%
-    purrr::map_dfr(get_all_tags_response_cleaner) %>%
-    dplyr::filter(language == filter_language)
+    purrr::map_dfr(get_all_tags_response_cleaner)
 
   return(data_clean)
 }

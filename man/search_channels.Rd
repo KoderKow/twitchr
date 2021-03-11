@@ -23,8 +23,20 @@ search_channels(
 
 \item{clean_json}{A logical. If \code{TRUE}, clean and tidy the data. If \code{FALSE}, return the result of \code{httr::content}.}
 }
+\value{
+A tibble data frame of search channel data.
+}
 \description{
 Returns a list of channels (users who have streamed within the past 6 months) that match the query via channel name or description either entirely or partially. Results include both live and offline channels. Online channels will have additional metadata (e.g. started_at, tag_ids).
+}
+\examples{
+\dontrun{
+library(twitchr)
+
+twitch_auth()
+
+search_results <- search_channels("theeatgamelove")
+}
 }
 \references{
 https://dev.twitch.tv/docs/api/reference#search-channels

@@ -15,6 +15,8 @@
 #' @family Clips
 #' @export
 #'
+#' @return A tibble data frame of clip data.
+#'
 #' @references https://dev.twitch.tv/docs/api/reference#get-clips
 #' @examples
 #' \dontrun{
@@ -59,6 +61,8 @@ get_clips <- function(
 #'
 #' @family Clips
 #' @export
+#'
+#' @return A tibble data frame of clip data.
 #'
 #' @references https://dev.twitch.tv/docs/api/reference#get-clips
 #' @examples
