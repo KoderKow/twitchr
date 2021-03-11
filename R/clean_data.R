@@ -159,7 +159,6 @@ tag_cleaner <- function(data_raw_element) {
 #' Clean the Response From Search Channels
 #'
 #' @inheritParams clean_videos
-#' @param filter_language A character. Language to filter the return of tags.
 #'
 #' @return A named list containing: data, a Clean and tidy tibble. pagination, cursor for pagination.
 clean_get_all_stream_tags <- function(response_content) {

@@ -8,8 +8,6 @@ clean_get_all_stream_tags(response_content)
 }
 \arguments{
 \item{response_content}{Content from a HTTP Request. This is expecting to take the output from \code{httr::content()}.}
-
-\item{filter_language}{A character. Language to filter the return of tags.}
 }
 \value{
 A named list containing: data, a Clean and tidy tibble. pagination, cursor for pagination.
