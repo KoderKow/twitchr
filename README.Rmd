@@ -104,6 +104,9 @@ Display who is currently in a broadcasters chat
 chatters <- get_chatters("theeatgamelove")
 ```
 
+### Other functions
+
+I have covered most of the Twitch API endpoints which can be viewed [here](https://koderkow.github.io/twitchr/reference/index.html). If there are any you would like added please create an issue! :)
 
 ## Thanks to
 
