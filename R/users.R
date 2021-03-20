@@ -8,6 +8,8 @@
 #'
 #' @export
 #'
+#' @return A tibble data frame of twitch user data.
+#'
 #' @family Users
 #' @references https://dev.twitch.tv/docs/api/reference#get-users
 #'
@@ -43,6 +45,8 @@ get_users <- function(
 #' @inheritParams get_cheermotes
 #'
 #' @export
+#'
+#' @return A tibble data frame of follower data.
 #'
 #' @family Users
 #' @references https://dev.twitch.tv/docs/api/reference#get-users-follows
@@ -83,9 +87,13 @@ get_follows <- function(
 #' @family Users
 #' @export
 #'
+#' @return A tibble data frame of all follower data.
+#'
 #' @references https://dev.twitch.tv/docs/api/reference#get-clips
 #' @examples
 #' \dontrun{
+#' library(twitchr)
+#'
 #' twitch_auth()
 #'
 #' user <- get_users(login = "TheEatGameLove")
@@ -129,9 +137,15 @@ get_all_follows <- function(
 #' @family Users
 #' @export
 #'
+#' @return A tibble data frame of chatter data.
+#'
 #' @references https://twitch.uservoice.com/forums/310213-developers/suggestions/39145294-chatters-viewers-helix-api-endpoint
 #' @examples
 #' \dontrun{
+#' library(twitchr)
+#'
+#' twitch_auth()
+#'
 #' chatters <- get_chatters("theeatgamelove")
 #' }
 get_chatters <- function(broadcaster) {

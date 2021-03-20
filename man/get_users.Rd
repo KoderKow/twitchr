@@ -13,6 +13,9 @@ get_users(id = NULL, login = NULL, clean_json = TRUE)
 
 \item{clean_json}{A logical. If \code{TRUE}, clean and tidy the data. If \code{FALSE}, return the result of \code{httr::content}.}
 }
+\value{
+A tibble data frame of twitch user data.
+}
 \description{
 Gets information about one or more specified Twitch users. Users are identified by optional user IDs and/or login name. If neither a user ID nor a login name is specified, the user is looked up by Bearer token. \emph{Note: This package does not support the bearer token at this time.}
 }

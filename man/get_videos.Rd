@@ -41,6 +41,9 @@ get_videos(
 
 \item{clean_json}{A logical. If \code{TRUE}, clean and tidy the data. If \code{FALSE}, return the result of \code{httr::content}.}
 }
+\value{
+A tibble data frame of videos data.
+}
 \description{
 Gets video information by video ID (one or more), user ID (one only), or game ID (one only). The following param description is from the Twitch API docs. Last Updated on 2020-11-22.
 }

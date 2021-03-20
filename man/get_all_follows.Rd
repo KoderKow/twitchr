@@ -11,11 +11,16 @@ get_all_follows(from_id = NULL, to_id = NULL)
 
 \item{to_id}{A character. User ID. The request returns information about users who are following the to_id user.}
 }
+\value{
+A tibble data frame of all follower data.
+}
 \description{
 Get All Follows
 }
 \examples{
 \dontrun{
+library(twitchr)
+
 twitch_auth()
 
 user <- get_users(login = "TheEatGameLove")

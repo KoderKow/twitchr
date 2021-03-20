@@ -12,14 +12,14 @@ Interact with Twitch through the Twitch API
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://koderkow.github.io/twitchr}
-  \item \url{https://github.com/KoderKow/twitchr}
-  \item Report bugs at \url{https://github.com/KoderKow/twitchr/issues}
+  \item \url{https://koderkow.github.io/twitchr/}
+  \item \url{https://github.com/KoderKow/twitchr/}
+  \item Report bugs at \url{https://github.com/KoderKow/twitchr/issues/}
 }
 
 }
 \author{
-\strong{Maintainer}: Kyle Harris \email{koderkow@gmail.com}
+\strong{Maintainer}: Kyle Harris \email{koderkow@gmail.com} [copyright holder]
 
 }
 \keyword{internal}

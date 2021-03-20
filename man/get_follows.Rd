@@ -23,6 +23,9 @@ get_follows(
 
 \item{clean_json}{A logical. If \code{TRUE}, clean and tidy the data. If \code{FALSE}, return the result of \code{httr::content}.}
 }
+\value{
+A tibble data frame of follower data.
+}
 \description{
 Get Follows
 }

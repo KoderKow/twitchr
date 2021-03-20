@@ -6,7 +6,15 @@
 #' @param client_secret A character. Twitch App Secret.
 #'
 #' @return Invisible authorization data.
+#'
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' library(twitchr)
+#'
+#' twitch_auth()
+#' }
 twitch_auth <- function(
   client_id = Sys.getenv("TWITCH_CLIENT_ID"),
   client_secret = Sys.getenv("TWITCH_SECRET")

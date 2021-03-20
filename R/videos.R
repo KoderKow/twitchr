@@ -16,6 +16,8 @@
 #'
 #' @export
 #'
+#' @return A tibble data frame of videos data.
+#'
 #' @family Videos
 #' @references https://dev.twitch.tv/docs/api/reference#get-videos
 #'

@@ -4,14 +4,14 @@ Version: 0.1.0
 Authors@R: 
     person(given = "Kyle",
            family = "Harris",
-           role = c("aut", "cre"),
+           role = c("aut", "cph", "cre"),
            email = "koderkow@gmail.com")
 Description: Interact with Twitch through the Twitch API
     <https://dev.twitch.tv/docs/api/>.
 License: MIT + file LICENSE
-URL: https://koderkow.github.io/twitchr,
-    https://github.com/KoderKow/twitchr
-BugReports: https://github.com/KoderKow/twitchr/issues
+URL: https://koderkow.github.io/twitchr/,
+    https://github.com/KoderKow/twitchr/
+BugReports: https://github.com/KoderKow/twitchr/issues/
 Imports: 
     dplyr,
     glue,

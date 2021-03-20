@@ -20,3 +20,10 @@ Invisible authorization data.
 \description{
 Get started with the Twitch API \href{https://dev.twitch.tv/docs/api/}{here}. \code{TWITCH_CLIENT_ID} and \code{TWITCH_SECRET} need to be set in the \emph{.Renviron} file. Set these values in \emph{.Renviron} with \code{usethis::edit_r_environ()}; ex: \code{TWITCH_CLIENT_ID=abc123}.
 }
+\examples{
+\dontrun{
+library(twitchr)
+
+twitch_auth()
+}
+}

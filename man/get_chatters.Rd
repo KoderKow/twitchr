@@ -9,11 +9,18 @@ get_chatters(broadcaster)
 \arguments{
 \item{broadcaster}{A string. The name of the broadcaster.}
 }
+\value{
+A tibble data frame of chatter data.
+}
 \description{
 As of 2021-02-28 this endpoint is not documented and does not use any IDs.
 }
 \examples{
 \dontrun{
+library(twitchr)
+
+twitch_auth()
+
 chatters <- get_chatters("theeatgamelove")
 }
 }
