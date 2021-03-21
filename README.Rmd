@@ -16,8 +16,8 @@ knitr::opts_chunk$set(
 # twitchr
 
 <!-- badges: start -->
-[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![R build status](https://github.com/KoderKow/twitchr/workflows/R-CMD-check/badge.svg)](https://github.com/KoderKow/twitchr/actions)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![R build status](https://github.com/KoderKow/twitchr/workflows/R-CMD-check/badge.svg)](https://github.com/KoderKow/twitchr/actions/)
 <!-- badges: end -->
 
 R wrapper for the Twitch API.
@@ -54,7 +54,7 @@ remotes::install_github("koderkow/twitchr")
 
 ### More Information
 
-Read about getting authorization tokens [here](https://dev.twitch.tv/docs/authentication).
+Read about getting authorization tokens [here](https://dev.twitch.tv/docs/authentication/).
 
 ## Examples
 
@@ -110,4 +110,4 @@ I have covered most of the Twitch API endpoints which can be viewed [here](https
 
 ## Thanks to
 
-- [Freguglia](https://github.com/Freguglia/rTwitchAPI) for getting me started on the oauth code
+- [Freguglia](https://github.com/Freguglia/rTwitchAPI/) for getting me started on the oauth code

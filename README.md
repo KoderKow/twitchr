@@ -6,9 +6,9 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![R build
-status](https://github.com/KoderKow/twitchr/workflows/R-CMD-check/badge.svg)](https://github.com/KoderKow/twitchr/actions)
+status](https://github.com/KoderKow/twitchr/workflows/R-CMD-check/badge.svg)](https://github.com/KoderKow/twitchr/actions/)
 <!-- badges: end -->
 
 R wrapper for the Twitch API.
@@ -48,7 +48,7 @@ remotes::install_github("koderkow/twitchr")
 ### More Information
 
 Read about getting authorization tokens
-[here](https://dev.twitch.tv/docs/authentication).
+[here](https://dev.twitch.tv/docs/authentication/).
 
 ## Examples
 
@@ -114,5 +114,5 @@ there are any you would like added please create an issue! :)
 
 ## Thanks to
 
--   [Freguglia](https://github.com/Freguglia/rTwitchAPI) for getting me
+-   [Freguglia](https://github.com/Freguglia/rTwitchAPI/) for getting me
     started on the oauth code
