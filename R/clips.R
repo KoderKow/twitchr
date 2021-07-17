@@ -89,7 +89,7 @@ get_all_clips <- function(
 
   d <- clips$data
 
-  while(!is.null(clips$pagination)) {
+  while (!is.null(clips$pagination)) {
     clips <- get_clips(
       broadcaster_id = broadcaster_id,
       game_id = game_id,
@@ -97,7 +97,7 @@ get_all_clips <- function(
       ended_at = ended_at,
       started_at = started_at,
       after = clips$pagination
-      )
+    )
 
     d <-
       d %>%

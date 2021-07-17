@@ -112,7 +112,7 @@ get_all_follows <- function(
 
   d <- follows$data
 
-  while(!is.null(follows$pagination)) {
+  while (!is.null(follows$pagination)) {
     follows <- get_follows(
       from_id = from_id,
       to_id = to_id,
@@ -150,7 +150,7 @@ get_all_follows <- function(
 #' }
 get_chatters <- function(broadcaster) {
   chatters_header <- httr::add_headers(
-    'Client-ID' = "",
+    "Client-ID" = "",
     Authorization = ""
   )
 

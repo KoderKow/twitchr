@@ -19,7 +19,6 @@ twitch_auth <- function(
   client_id = Sys.getenv("TWITCH_CLIENT_ID"),
   client_secret = Sys.getenv("TWITCH_SECRET")
 ) {
-
   if (client_id == "" | is.null(client_id)) {
     usethis::ui_stop("Twitch Client ID is not detected. Set TWITCH_CLIENT_ID in your .Renviron. For help run {usethis::ui_value('vignette(\"authentication-set-up\", package = \"twitchr\")')} in the R console.")
   }
@@ -45,7 +44,7 @@ twitch_auth <- function(
   response_content <- httr::content(response)
 
   httr::add_headers(
-    'Client-ID' = client_id,
+    "Client-ID" = client_id,
     Authorization = paste0("Bearer ", response_content$access_token)
   ) %>%
     httr::set_config()
