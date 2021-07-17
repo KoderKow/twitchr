@@ -165,14 +165,10 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble data frame of a user's schedule data.</p>
+    <p>A named list. <code>data</code> (tibble): the users schedule, NULL if no schudule. <code>vacation</code> (tibble): the users vacation dates, NULL if no vacation. <code>pagination</code> (character): Pagination value for the <code>after</code> parameter to get more data.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>If a Twitch streamer uses recurring scheduling the pagination will be infinite.</p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Vacations</h3>
-
-
-<p>If a Twitch streamer uses the vacation feature on twitch the return will have "Vacation" as a <code>category_name</code> with a <code>category_id</code> of 0 for filtering + displaying vacation times.</p>
-
+    <p>If a Twitch streamer uses recurring scheduling the pagination will be infinite.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>https://dev.twitch.tv/docs/api/reference#get-channel-stream-schedule</p>
@@ -190,7 +186,10 @@
 
 <span class='fu'><a href='twitch_auth.html'>twitch_auth</a></span><span class='op'>(</span><span class='op'>)</span>
 
-<span class='va'>users</span> <span class='op'>&lt;-</span> <span class='fu'><a href='get_users.html'>get_users</a></span><span class='op'>(</span>login <span class='op'>=</span> <span class='st'>"TheEatGameLove"</span><span class='op'>)</span>
+<span class='co'>## I set my account to be on vacation from "July 16, 2021"</span>
+<span class='co'>## to "July 16, 2026" for testing. There are also 4 days</span>
+<span class='co'>## of recurring streams with different values for testing.</span>
+<span class='va'>users</span> <span class='op'>&lt;-</span> <span class='fu'><a href='get_users.html'>get_users</a></span><span class='op'>(</span>login <span class='op'>=</span> <span class='st'>"KoderKow"</span><span class='op'>)</span>
 
 <span class='va'>schedule</span> <span class='op'>&lt;-</span> <span class='fu'>get_schedule</span><span class='op'>(</span><span class='va'>users</span><span class='op'>$</span><span class='va'>id</span><span class='op'>)</span>
 <span class='op'>}</span>
