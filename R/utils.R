@@ -84,7 +84,6 @@ make_request <- function(
     if (end_point == "schedule") {
       result <- clean_get_schedule(response_content)
     }
-
   } else {
     result <- response_content
   }
@@ -147,7 +146,7 @@ format_parameters <- function(...) {
 #' @references https://github.com/renkun-ken/rlist
 #'
 #' @noRd
-flatten_keep_names <- function (x, use.names = TRUE, classes = "ANY") {
+flatten_keep_names <- function(x, use.names = TRUE, classes = "ANY") {
   len <- sum(rapply(x, function(x) 1L, classes = classes))
   y <- vector("list", len)
   i <- 0L
@@ -156,8 +155,9 @@ flatten_keep_names <- function (x, use.names = TRUE, classes = "ANY") {
     y[[i]] <<- x
     TRUE
   }, classes = classes)
-  if (use.names && !is.null(nm <- names(items)))
+  if (use.names && !is.null(nm <- names(items))) {
     names(y) <- stringr::str_replace_all(nm, "\\.", "_")
+  }
   y
 }
 
@@ -172,10 +172,7 @@ flatten_keep_names <- function (x, use.names = TRUE, classes = "ANY") {
 #'
 #' @noRd
 `%shh%` <- function(lhs, rhs) {
-  w <- options()$warn
-  on.exit(options(warn = w))
-  options(warn = -1)
-  suppressMessages(eval.parent(substitute(lhs %>% rhs)))
+  suppressWarnings(suppressMessages(eval.parent(substitute(lhs %>% rhs))))
 }
 
 #' Wrapper for Formatting Date Times
