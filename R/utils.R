@@ -81,6 +81,10 @@ make_request <- function(
       result <- clean_get_follows(response_content)
     }
 
+    if (end_point == "schedule") {
+      result <- clean_get_schedule(response_content)
+    }
+
   } else {
     result <- response_content
   }
