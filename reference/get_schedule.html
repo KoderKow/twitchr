@@ -112,7 +112,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Get Schedule</h1>
-    <small class="dont-index">Source: <a href='https://github.com/KoderKow/twitchr/blob/master/R/schedule.R'><code>R/schedule.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/KoderKow/twitchr/blob/master/R/users.R'><code>R/users.R</code></a></small>
     <div class="hidden name"><code>get_schedule.Rd</code></div>
     </div>
 
@@ -166,9 +166,23 @@
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A tibble data frame of a user's schedule data.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>If a Twitch streamer uses recurring scheduling the pagination will be infinite.</p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Vacations</h3>
+
+
+<p>If a Twitch streamer uses the vacation feature on twitch the return will have "Vacation" as a <code>category_name</code> with a <code>category_id</code> of 0 for filtering + displaying vacation times.</p>
+
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>https://dev.twitch.tv/docs/api/reference#get-channel-stream-schedule</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Other Users: 
+<code><a href='get_all_follows.html'>get_all_follows</a>()</code>,
+<code><a href='get_chatters.html'>get_chatters</a>()</code>,
+<code><a href='get_follows.html'>get_follows</a>()</code>,
+<code><a href='get_users.html'>get_users</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
