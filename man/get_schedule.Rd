@@ -30,17 +30,13 @@ get_schedule(
 \item{clean_json}{A logical. If \code{TRUE}, clean and tidy the data. If \code{FALSE}, return the result of \code{httr::content}.}
 }
 \value{
-A tibble data frame of a user's schedule data.
+A named list. \code{data} (tibble): the users schedule, NULL if no schudule. \code{vacation} (tibble): the users vacation dates, NULL if no vacation. \code{pagination} (character): Pagination value for the \code{after} parameter to get more data.
 }
 \description{
 Gets all scheduled broadcasts or specific scheduled broadcasts from a channel’s \href{https://help.twitch.tv/s/article/channel-page-setup?language=en_US#Schedule}{stream schedule}. Scheduled broadcasts are defined as “stream segments” in the API.
 }
 \details{
 If a Twitch streamer uses recurring scheduling the pagination will be infinite.
-\subsection{Vacations}{
-
-If a Twitch streamer uses the vacation feature on twitch the return will have "Vacation" as a \code{category_name} with a \code{category_id} of 0 for filtering + displaying vacation times.
-}
 }
 \examples{
 \dontrun{
@@ -48,7 +44,10 @@ library(twitchr)
 
 twitch_auth()
 
-users <- get_users(login = "TheEatGameLove")
+## I set my account to be on vacation from "July 16, 2021"
+## to "July 16, 2026" for testing. There are also 4 days
+## of recurring streams with different values for testing.
+users <- get_users(login = "KoderKow")
 
 schedule <- get_schedule(users$id)
 }

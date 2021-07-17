@@ -10,7 +10,7 @@ clean_get_schedule(response_content)
 \item{response_content}{Content from a HTTP Request. This is expecting to take the output from \code{httr::content()}.}
 }
 \value{
-A named list containing: data, a Clean and tidy tibble. pagination, cursor for pagination.
+A named list containing: data, a Clean and tidy tibble. vacation, if not \code{NULL}, a clean and tidy tibble. pagination, cursor for pagination.
 }
 \description{
 Clean the Response From User Follows

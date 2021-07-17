@@ -247,7 +247,7 @@ clean_get_follows <- function(response_content) {
 #'
 #' @inheritParams clean_videos
 #'
-#' @return A named list containing: data, a Clean and tidy tibble. pagination, cursor for pagination.
+#' @return A named list containing: data, a Clean and tidy tibble. vacation, if not `NULL`, a clean and tidy tibble. pagination, cursor for pagination.
 clean_get_schedule <- function(response_content) {
   response_data <-
     response_content %>%
@@ -259,41 +259,40 @@ clean_get_schedule <- function(response_content) {
     dplyr::bind_rows() %>%
     tidyr::unnest(category)
 
-  d_segments <-
+  d_final <-
     initial_segments %>%
     dplyr::mutate(category_type = rep(c("category_id", "category_name"), nrow(initial_segments) / 2)) %>%
     tidyr::pivot_wider(
       names_from = category_type,
       values_from = category
-    ) |>
-    dplyr::mutate(category_id = as.numeric(category_id))
+    ) %>%
+    dplyr::mutate(
+      category_id       = as.numeric(category_id),
+      broadcaster_id    = response_data$broadcaster_id,
+      broadcaster_name  = response_data$broadcaster_name,
+      broadcaster_login = response_data$broadcaster_login
+    ) %>%
+    dplyr::relocate(dplyr::starts_with("broadcaster_")) %>%
+    date_formatter()
 
   ## Check for vacation
   if (!is.null(response_data$vacation)) {
-    d_segments <-
-      d_segments %>%
-      dplyr::add_row(
-        start_time = response_data$vacation$start_time,
-        end_time = response_data$vacation$end_time,
-        ## Add fake category info for filtering
-        category_id = 0,
-        category_name = "Vacation",
-        is_recurring = FALSE
-      )
+    d_vacation <-
+      dplyr::tibble(
+        broadcaster_id    = response_data$broadcaster_id,
+        broadcaster_name  = response_data$broadcaster_name,
+        broadcaster_login = response_data$broadcaster_login,
+        start_time        = response_data$vacation$start_time,
+        end_time          = response_data$vacation$end_time
+      ) %>%
+      date_formatter()
+  } else {
+    d_vacation <- NULL
   }
-
-  ## Add broadcaster info
-  d_final <-
-    d_segments %>%
-    dplyr::mutate(
-      broadcaster_id = response_data$broadcaster_id,
-      broadcaster_name = response_data$broadcaster_name,
-      broadcaster_login = response_data$broadcaster_login
-    ) %>%
-    dplyr::relocate(dplyr::starts_with("broadcaster_"))
 
   return_list <- list(
     data = d_final,
+    vacation = d_vacation,
     pagination = response_content$pagination$cursor
   )
 

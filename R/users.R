@@ -173,10 +173,6 @@ get_chatters <- function(broadcaster) {
 #'
 #' If a Twitch streamer uses recurring scheduling the pagination will be infinite.
 #'
-#' ## Vacations
-#'
-#' If a Twitch streamer uses the vacation feature on twitch the return will have "Vacation" as a `category_name` with a `category_id` of 0 for filtering + displaying vacation times.
-#'
 #' @param broadcaster_id A string. User ID of the broadcaster who owns the channel streaming schedule. Provided broadcaster_id must match the user_id in the user OAuth token. Maximum: 1
 #' @param id A string. The ID of the stream segment to return. Maximum: 100.
 #' @param start_time A string. A timestamp in RFC3339 format to start returning stream segments from. If not specified, the current date and time is used.
@@ -185,7 +181,7 @@ get_chatters <- function(broadcaster) {
 #' @param after A string. Cursor for forward pagination: tells the server where to start fetching the next set of results in a multi-page response. The cursor value specified here is from the pagination response field of a prior query.
 #' @inheritParams get_cheermotes
 #'
-#' @return A tibble data frame of a user's schedule data.
+#' @return A named list. `data` (tibble): the users schedule, NULL if no schudule. `vacation` (tibble): the users vacation dates, NULL if no vacation. `pagination` (character): Pagination value for the `after` parameter to get more data.
 #' @export
 #'
 #' @family Users
@@ -197,7 +193,10 @@ get_chatters <- function(broadcaster) {
 #'
 #' twitch_auth()
 #'
-#' users <- get_users(login = "TheEatGameLove")
+#' ## I set my account to be on vacation from "July 16, 2021"
+#' ## to "July 16, 2026" for testing. There are also 4 days
+#' ## of recurring streams with different values for testing.
+#' users <- get_users(login = "KoderKow")
 #'
 #' schedule <- get_schedule(users$id)
 #' }
