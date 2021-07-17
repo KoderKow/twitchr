@@ -35,6 +35,7 @@ https://dev.twitch.tv/docs/api/reference#get-clips
 Other Users: 
 \code{\link{get_chatters}()},
 \code{\link{get_follows}()},
+\code{\link{get_schedule}()},
 \code{\link{get_users}()}
 }
 \concept{Users}

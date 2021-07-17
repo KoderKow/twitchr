@@ -47,6 +47,7 @@ https://dev.twitch.tv/docs/api/reference#get-users-follows
 Other Users: 
 \code{\link{get_all_follows}()},
 \code{\link{get_chatters}()},
+\code{\link{get_schedule}()},
 \code{\link{get_users}()}
 }
 \concept{Users}

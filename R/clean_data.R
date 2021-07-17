@@ -242,3 +242,60 @@ clean_get_follows <- function(response_content) {
 
   return(return_list)
 }
+
+#' Clean the Response From User Follows
+#'
+#' @inheritParams clean_videos
+#'
+#' @return A named list containing: data, a Clean and tidy tibble. pagination, cursor for pagination.
+clean_get_schedule <- function(response_content) {
+  response_data <-
+    response_content %>%
+    purrr::pluck("data")
+
+  ## Get the segements
+  initial_segments <-
+    response_data$segments %>%
+    dplyr::bind_rows() %>%
+    tidyr::unnest(category)
+
+  d_segments <-
+    initial_segments %>%
+    dplyr::mutate(category_type = rep(c("category_id", "category_name"), nrow(initial_segments) / 2)) %>%
+    tidyr::pivot_wider(
+      names_from = category_type,
+      values_from = category
+    ) |>
+    dplyr::mutate(category_id = as.numeric(category_id))
+
+  ## Check for vacation
+  if (!is.null(response_data$vacation)) {
+    d_segments <-
+      d_segments %>%
+      dplyr::add_row(
+        start_time = response_data$vacation$start_time,
+        end_time = response_data$vacation$end_time,
+        ## Add fake category info for filtering
+        category_id = 0,
+        category_name = "Vacation",
+        is_recurring = FALSE
+      )
+  }
+
+  ## Add broadcaster info
+  d_final <-
+    d_segments %>%
+    dplyr::mutate(
+      broadcaster_id = response_data$broadcaster_id,
+      broadcaster_name = response_data$broadcaster_name,
+      broadcaster_login = response_data$broadcaster_login
+    ) %>%
+    dplyr::relocate(dplyr::starts_with("broadcaster_"))
+
+  return_list <- list(
+    data = d_final,
+    pagination = response_content$pagination$cursor
+  )
+
+  return(return_list)
+}

@@ -24,7 +24,7 @@ make_request <- function(
   response_content <- httr::content(response)
 
   if (length(response_content$data) == 0) {
-    usethis::ui_warn("The request is successful, however, there is no data in the response.")
+    usethis::ui_warn("The request is successful, however, there is no data in the response. Returning {usethis::ui_value('NULL')}.")
 
     return(NULL)
   }
@@ -94,20 +94,21 @@ make_request <- function(
 
 #' Check Request Status From Twitch
 #'
-#' @param response A response objct. Generally generated from `httr::GET()` or `httr::POST()`.
+#' @param response A response object. Generally generated from `httr::GET()` or `httr::POST()`.
+#' @param check_status A logical. Should the check stop if there is an error?
 #'
 #' @return An error message if status code is not 200. Invisible `NULL` if status code is 200.
 #'
 #' @noRd
-check_status <- function(response) {
+check_status <- function(response, check_status = TRUE) {
   status_code <- httr::status_code(response)
 
   if (status_code != 200) {
     response_content <- httr::content(response)
-    usethis::ui_stop("Bad Request (HTTP {response_content$status}). {stringr::str_to_sentence(response_content$message)}.")
+    usethis::ui_warn("Bad Request (HTTP {response_content$status}). {stringr::str_to_sentence(response_content$message)}.")
   }
 
-  return(invisible())
+  return(invisible(response_content))
 }
 
 #' Format Parameters

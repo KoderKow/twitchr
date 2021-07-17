@@ -5,4 +5,4 @@
 # roxygen namespace tags. Modify with care!
 ## usethis namespace: start
 ## usethis namespace: end
-globalVariables(c(".", "created_at", "tiers", "broadcaster_type", "language", "login", "response_content", "URLencode", "l"))
+globalVariables(c(".", "created_at", "tiers", "broadcaster_type", "language", "login", "response_content", "URLencode", "l", "category", "category_id", "category_type"))
