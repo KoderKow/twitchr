@@ -189,7 +189,9 @@ date_formatter <- function(.data) {
           dplyr::matches("created_at"),
           dplyr::matches("published_at"),
           dplyr::matches("last_updated"),
-          dplyr::matches("followed_at")
+          dplyr::matches("followed_at"),
+          dplyr::matches("start_time"),
+          dplyr::matches("end_time")
         ),
         .fns = lubridate::ymd_hms
       )
