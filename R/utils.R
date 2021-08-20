@@ -199,3 +199,11 @@ date_formatter <- function(.data) {
 
   return(d)
 }
+
+"%||%" <- function(x, y) {
+  if (is.null(x)) {
+    y
+  } else {
+    x
+  }
+}

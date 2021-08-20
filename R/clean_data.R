@@ -255,6 +255,7 @@ clean_get_schedule <- function(response_content) {
   ## Get the segements
   initial_segments <-
     response_data$segments %>%
+    purrr::map(~ purrr::map(.x, ~ .x %||% NA)) %>%
     dplyr::bind_rows() %>%
     tidyr::unnest(category)
 
