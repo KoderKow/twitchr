@@ -8,7 +8,6 @@
 [![R-CMD-check](https://github.com/KoderKow/twitchr/workflows/R-CMD-check/badge.svg)](https://github.com/KoderKow/twitchr/actions)
 [![Lifecycle:
 stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F05WWXD)
 <!-- badges: end -->
 
 R wrapper for the Twitch API.
