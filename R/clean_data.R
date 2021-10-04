@@ -253,27 +253,32 @@ clean_get_schedule <- function(response_content) {
     purrr::pluck("data")
 
   ## Get the segements
-  initial_segments <-
-    response_data$segments %>%
-    purrr::map(~ purrr::map(.x, ~ .x %||% NA)) %>%
-    dplyr::bind_rows() %>%
-    tidyr::unnest(category)
+  if (is.null(response_data$segments)) {
+    d_final <- NULL
 
-  d_final <-
-    initial_segments %>%
-    dplyr::mutate(category_type = rep(c("category_id", "category_name"), nrow(initial_segments) / 2)) %>%
-    tidyr::pivot_wider(
-      names_from = category_type,
-      values_from = category
-    ) %>%
-    dplyr::mutate(
-      category_id       = as.numeric(category_id),
-      broadcaster_id    = response_data$broadcaster_id,
-      broadcaster_name  = response_data$broadcaster_name,
-      broadcaster_login = response_data$broadcaster_login
-    ) %>%
-    dplyr::relocate(dplyr::starts_with("broadcaster_")) %>%
-    date_formatter()
+  } else {
+    initial_segments <-
+      response_data$segments %>%
+      purrr::map(~ purrr::map(.x, ~ .x %||% NA)) %>%
+      dplyr::bind_rows() %>%
+      tidyr::unnest(category)
+
+    d_final <-
+      initial_segments %>%
+      dplyr::mutate(category_type = rep(c("category_id", "category_name"), nrow(initial_segments) / 2)) %>%
+      tidyr::pivot_wider(
+        names_from = category_type,
+        values_from = category
+      ) %>%
+      dplyr::mutate(
+        category_id       = as.numeric(category_id),
+        broadcaster_id    = response_data$broadcaster_id,
+        broadcaster_name  = response_data$broadcaster_name,
+        broadcaster_login = response_data$broadcaster_login
+      ) %>%
+      dplyr::relocate(dplyr::starts_with("broadcaster_")) %>%
+      date_formatter()
+  }
 
   ## Check for vacation
   if (!is.null(response_data$vacation)) {
