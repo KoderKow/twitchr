@@ -17,8 +17,7 @@ R wrapper for the Twitch API.
 ### From Github
 
 ``` r
-if (!requireNamespace("remotes")){install.packages("remotes")}
-remotes::install_github("koderkow/twitchr")
+devtools::install_github("koderkow/twitch")
 ```
 
 ## Setup
