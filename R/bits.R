@@ -15,7 +15,7 @@
 #' \dontrun{
 #' twitch_auth()
 #'
-#' user <- get_users(login = "TheEatGameLove")
+#' user <- get_users(login = "KowAndToilet")
 #'
 #' cheermotes <- get_cheermotes(broadcaster_id = user$id)
 #' }

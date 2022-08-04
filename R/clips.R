@@ -22,7 +22,7 @@
 #' \dontrun{
 #' twitch_auth()
 #'
-#' user <- get_users(login = "TheEatGameLove")
+#' user <- get_users(login = "KowAndToilet")
 #'
 #' clips <- get_clips(broadcaster_id = user$id)
 #' }
@@ -69,7 +69,7 @@ get_clips <- function(
 #' \dontrun{
 #' twitch_auth()
 #'
-#' user <- get_users(login = "TheEatGameLove")
+#' user <- get_users(login = "KowAndToilet")
 #'
 #' all_clips <- get_all_clips(broadcaster_id = user$id)
 #' }

@@ -35,7 +35,7 @@ library(twitchr)
 
 twitch_auth()
 
-user <- get_users(login = "TheEatGameLove")
+user <- get_users(login = "KowAndToilet")
 
 followers <- get_follows(to_id = user$id)
 }
@@ -46,6 +46,7 @@ https://dev.twitch.tv/docs/api/reference#get-users-follows
 \seealso{
 Other Users: 
 \code{\link{get_all_follows}()},
+\code{\link{get_all_videos}()},
 \code{\link{get_chatters}()},
 \code{\link{get_schedule}()},
 \code{\link{get_users}()}

@@ -20,7 +20,7 @@
 #'
 #' twitch_auth()
 #'
-#' search_results <- search_channels("theeatgamelove")
+#' search_results <- search_channels("KowAndToilet")
 #' }
 search_channels <- function(
   query = NULL,

@@ -13,7 +13,7 @@ get_chatters(broadcaster)
 A tibble data frame of chatter data.
 }
 \description{
-As of 2021-02-28 this endpoint is not documented and does not use any IDs.
+\strong{This uses undocumented API endpoints. This may change or break at anytime. Use at your own risk!}.
 }
 \examples{
 \dontrun{
@@ -21,7 +21,7 @@ library(twitchr)
 
 twitch_auth()
 
-chatters <- get_chatters("theeatgamelove")
+chatters <- get_chatters("KowAndToilet")
 }
 }
 \references{
@@ -30,6 +30,7 @@ https://twitch.uservoice.com/forums/310213-developers/suggestions/39145294-chatt
 \seealso{
 Other Users: 
 \code{\link{get_all_follows}()},
+\code{\link{get_all_videos}()},
 \code{\link{get_follows}()},
 \code{\link{get_schedule}()},
 \code{\link{get_users}()}

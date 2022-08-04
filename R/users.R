@@ -19,7 +19,7 @@
 #'
 #' twitch_auth()
 #'
-#' users <- get_users(login = "TheEatGameLove")
+#' users <- get_users(login = "KowAndToilet")
 #' }
 get_users <- function(
   id = NULL,
@@ -57,7 +57,7 @@ get_users <- function(
 #'
 #' twitch_auth()
 #'
-#' user <- get_users(login = "TheEatGameLove")
+#' user <- get_users(login = "KowAndToilet")
 #'
 #' followers <- get_follows(to_id = user$id)
 #' }
@@ -96,7 +96,7 @@ get_follows <- function(
 #'
 #' twitch_auth()
 #'
-#' user <- get_users(login = "TheEatGameLove")
+#' user <- get_users(login = "KowAndToilet")
 #'
 #' all_followers <- get_all_follows(to_id = user$id)
 #' }
@@ -130,7 +130,7 @@ get_all_follows <- function(
 
 #' Get A Broadcasters Current Chatters
 #'
-#' As of 2021-02-28 this endpoint is not documented and does not use any IDs.
+#' **This uses undocumented API endpoints. This may change or break at anytime. Use at your own risk!**.
 #'
 #' @param broadcaster A string. The name of the broadcaster.
 #'
@@ -146,7 +146,7 @@ get_all_follows <- function(
 #'
 #' twitch_auth()
 #'
-#' chatters <- get_chatters("theeatgamelove")
+#' chatters <- get_chatters("KowAndToilet")
 #' }
 get_chatters <- function(broadcaster) {
   chatters_header <- httr::add_headers(
@@ -154,8 +154,10 @@ get_chatters <- function(broadcaster) {
     Authorization = ""
   )
 
+  broadcaster_lower <- stringr::str_to_lower(broadcaster)
+
   chatters <-
-    glue::glue("https://tmi.twitch.tv/group/user/{broadcaster}/chatters") %>%
+    glue("https://tmi.twitch.tv/group/user/{broadcaster_lower}/chatters") %>%
     httr::GET(chatters_header) %>%
     httr::content() %>%
     purrr::pluck("chatters") %>%

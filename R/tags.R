@@ -65,7 +65,7 @@ get_all_stream_tags <- function(
 #'
 #' twitch_auth()
 #'
-#' user <- get_users(login = "TheEatGameLove")
+#' user <- get_users(login = "KowAndToilet")
 #'
 #' tags <- get_stream_tags(broadcaster_id = user$id)
 #' }

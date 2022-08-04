@@ -35,7 +35,7 @@ library(twitchr)
 
 twitch_auth()
 
-search_results <- search_channels("theeatgamelove")
+search_results <- search_channels("KowAndToilet")
 }
 }
 \references{

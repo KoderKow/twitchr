@@ -45,7 +45,7 @@ Gets clip information by clip ID (one or more), broadcaster ID (one only), or ga
 \dontrun{
 twitch_auth()
 
-user <- get_users(login = "TheEatGameLove")
+user <- get_users(login = "KowAndToilet")
 
 clips <- get_clips(broadcaster_id = user$id)
 }

@@ -4,10 +4,9 @@
 \name{twitchr-package}
 \alias{twitchr}
 \alias{twitchr-package}
-\title{twitchr: R Interface for the Twitch API}
+\title{twitchr: R Interface for the 'Twitch API'}
 \description{
-Interact with Twitch through the Twitch API
-    <https://dev.twitch.tv/docs/api/>.
+Interact with Twitch' through the 'Twitch API' <https://dev.twitch.tv/docs/api/>.
 }
 \seealso{
 Useful links:

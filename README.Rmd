@@ -75,7 +75,7 @@ twitch_auth()
 Look up a user by their display name to get user information. This is userful to obtain `broadcaster_id` for other functions
 
 ```{r}
-user <- get_users(login = "theeatgamelove")
+user <- get_users(login = "KowAndToilet")
 
 user
 ```
@@ -101,7 +101,7 @@ followers <- get_follows(to_id = user$id)
 Display who is currently in a broadcasters chat
 
 ```{r}
-chatters <- get_chatters("theeatgamelove")
+chatters <- get_chatters("KowAndToilet")
 ```
 
 ### Other functions

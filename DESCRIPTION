@@ -1,28 +1,32 @@
 Package: twitchr
-Title: R Interface for the Twitch API
+Title: R Interface for the 'Twitch API'
 Version: 0.1.0
 Authors@R: 
-    person(given = "Kyle",
-           family = "Harris",
-           role = c("aut", "cph", "cre"),
-           email = "koderkow@gmail.com")
-Description: Interact with Twitch through the Twitch API
+    person("Kyle", "Harris", , "koderkow@gmail.com", role = c("aut", "cph", "cre"))
+Description: Interact with Twitch' through the 'Twitch API'
     <https://dev.twitch.tv/docs/api/>.
 License: MIT + file LICENSE
 URL: https://koderkow.github.io/twitchr/,
     https://github.com/KoderKow/twitchr/
 BugReports: https://github.com/KoderKow/twitchr/issues/
+Depends: 
+    R (>= 2.10)
 Imports: 
     dplyr,
     glue,
     httr,
+    httr2,
     lubridate,
     magrittr,
+    rlang,
     purrr,
     stringr,
     tibble,
     tidyr,
-    usethis
+    usethis,
+    lifecycle,
+    cli,
+    withr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

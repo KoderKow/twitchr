@@ -58,6 +58,7 @@ https://dev.twitch.tv/docs/api/reference#get-channel-stream-schedule
 \seealso{
 Other Users: 
 \code{\link{get_all_follows}()},
+\code{\link{get_all_videos}()},
 \code{\link{get_chatters}()},
 \code{\link{get_follows}()},
 \code{\link{get_users}()}

@@ -15,7 +15,7 @@ make_request <- function(
 
   ## Establish URLs
   base_url <- "https://api.twitch.tv/helix/"
-  url_end_point <- glue::glue("{base_url}{end_point}{formatted_params}")
+  url_end_point <- glue("{base_url}{end_point}{formatted_params}")
 
   response <- httr::GET(url = url_end_point)
 
@@ -23,8 +23,8 @@ make_request <- function(
 
   response_content <- httr::content(response)
 
-  if (length(response_content$data) == 0) {
-    usethis::ui_warn("The request is successful, however, there is no data in the response. Returning {usethis::ui_value('NULL')}.")
+  if (length(response_content$data) == 0 & !stringr::str_detect(formatted_params, "after|before")) {
+    usethis::ui_warn("The request is successful, however, there is no data in the response. This could be due to no data or if using pagination (get_all_*) requests. Returning {usethis::ui_value('NULL')}.")
 
     return(NULL)
   }
@@ -127,9 +127,9 @@ format_parameters <- function(...) {
   formatted_parameters <-
     parameters %>%
     purrr::imap_chr(~ {
-      glue::glue_collapse(glue::glue("{.y}={.x}"), sep = "&")
+      glue_collapse(glue("{.y}={.x}"), sep = "&")
     }) %>%
-    glue::glue_collapse(sep = "&") %>%
+    glue_collapse(sep = "&") %>%
     paste0("?", .) %>%
     URLencode()
 
@@ -159,20 +159,6 @@ flatten_keep_names <- function(x, use.names = TRUE, classes = "ANY") {
     names(y) <- stringr::str_replace_all(nm, "\\.", "_")
   }
   y
-}
-
-#' @title Silence the Haters
-#'
-#' @description For situations when you want to mute **known** warnings or messages in a {dplyr} chain.
-#'
-#' @param lhs A value or the magrittr placeholder.
-#' @param rhs A function call using the magrittr semantics.
-#'
-#' @references https://stackoverflow.com/a/55668716
-#'
-#' @noRd
-`%shh%` <- function(lhs, rhs) {
-  suppressWarnings(suppressMessages(eval.parent(substitute(lhs %>% rhs))))
 }
 
 #' Wrapper for Formatting Date Times

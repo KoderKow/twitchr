@@ -30,7 +30,7 @@ Gets clip information by broadcaster ID (one only), or game ID (one only). This 
 \dontrun{
 twitch_auth()
 
-user <- get_users(login = "TheEatGameLove")
+user <- get_users(login = "KowAndToilet")
 
 all_clips <- get_all_clips(broadcaster_id = user$id)
 }

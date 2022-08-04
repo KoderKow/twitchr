@@ -53,7 +53,7 @@ clean_bits_cheermotes <- function(response_content) {
     data_raw %>%
     dplyr::pull(tiers) %>%
     purrr::map_dfr(flatten_keep_names) %>%
-    dplyr::rename_all(~ glue::glue("tiers_{.x}"))
+    dplyr::rename_all(~ glue("tiers_{.x}"))
 
   data_clean <-
     data_raw %>%
@@ -255,7 +255,6 @@ clean_get_schedule <- function(response_content) {
   ## Get the segements
   if (is.null(response_data$segments)) {
     d_final <- NULL
-
   } else {
     initial_segments <-
       response_data$segments %>%

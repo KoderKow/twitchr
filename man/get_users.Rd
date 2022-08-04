@@ -25,7 +25,7 @@ library(twitchr)
 
 twitch_auth()
 
-users <- get_users(login = "TheEatGameLove")
+users <- get_users(login = "KowAndToilet")
 }
 }
 \references{
@@ -34,6 +34,7 @@ https://dev.twitch.tv/docs/api/reference#get-users
 \seealso{
 Other Users: 
 \code{\link{get_all_follows}()},
+\code{\link{get_all_videos}()},
 \code{\link{get_chatters}()},
 \code{\link{get_follows}()},
 \code{\link{get_schedule}()}

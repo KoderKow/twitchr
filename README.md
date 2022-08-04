@@ -29,19 +29,19 @@ remotes::install_github("koderkow/twitchr")
 2.  Login with Twitch
 3.  Click *Register Your Application*
 4.  Fill out the App information
-      - Name: Name of the app. Something to label it for the own
+    -   Name: Name of the app. Something to label it for the own
         personal use
-      - OAuth Redirect URLs: Fill this in if one if you have one. If not
+    -   OAuth Redirect URLs: Fill this in if one if you have one. If not
         put `http://localhost`
-      - Category: Pick related category such as *Analytics Tool*
+    -   Category: Pick related category such as *Analytics Tool*
 5.  Click Create
 6.  On the new app, click *Manage*
 7.  This page will have the Client ID and Client Secret
 8.  Open the `.Renviron` to add these values
-      - Run `usethis::edit_r_environ()` in the RStudio R console
+    -   Run `usethis::edit_r_environ()` in the RStudio R console
 9.  Enter the two key values into this file with the following key names
-      - `TWITCH_CLIENT_ID=YOUR CLIENT ID`
-      - `TWITCH_SECRET=YOUR SECRET`
+    -   `TWITCH_CLIENT_ID=YOUR CLIENT ID`
+    -   `TWITCH_SECRET=YOUR SECRET`
 10. Restart the RStudio session
 
 ### More Information
@@ -70,14 +70,14 @@ Look up a user by their display name to get user information. This is
 userful to obtain `broadcaster_id` for other functions
 
 ``` r
-user <- get_users(login = "theeatgamelove")
+user <- get_users(login = "KowAndToilet")
 
 user
-#> # A tibble: 1 × 10
-#>   id        login          display_name type  broadcaster_type description profile_image_u…
-#>   <chr>     <chr>          <chr>        <chr> <chr>            <chr>       <chr>           
-#> 1 613890167 theeatgamelove TheEatGameL… ""    affiliate        Hello frie… https://static-…
-#> # … with 3 more variables: offline_image_url <chr>, view_count <int>,
+#> # A tibble: 1 x 10
+#>   id      login display_name type  broadcaster_type description profile_image_u~
+#>   <chr>   <chr> <chr>        <chr> <chr>            <chr>       <chr>           
+#> 1 613890~ kowa~ kowandtoilet ""    affiliate        Kyle and L~ https://static-~
+#> # ... with 3 more variables: offline_image_url <chr>, view_count <int>,
 #> #   created_at <dttm>
 ```
 
@@ -102,16 +102,16 @@ followers <- get_follows(to_id = user$id)
 Display who is currently in a broadcasters chat
 
 ``` r
-chatters <- get_chatters("theeatgamelove")
+chatters <- get_chatters("KowAndToilet")
 ```
 
 ### Other functions
 
 I have covered most of the Twitch API endpoints which can be viewed
 [here](https://koderkow.github.io/twitchr/reference/index.html). If
-there are any you would like added please create an issue\! :)
+there are any you would like added please create an issue! :)
 
 ## Thanks to
 
-  - [Freguglia](https://github.com/Freguglia/rTwitchAPI/) for getting me
+-   [Freguglia](https://github.com/Freguglia/rTwitchAPI/) for getting me
     started on the oauth code

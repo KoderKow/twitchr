@@ -19,6 +19,7 @@
 #' @return A tibble data frame of videos data.
 #'
 #' @family Videos
+#'
 #' @references https://dev.twitch.tv/docs/api/reference#get-videos
 #'
 #' @examples
@@ -27,7 +28,7 @@
 #'
 #' twitch_auth()
 #'
-#' # Get a user'rs first 20 videos
+#' # Get a user's first 20 videos
 #' videos <- get_videos(user_id = 613890167)
 #' }
 get_videos <- function(
@@ -57,6 +58,71 @@ get_videos <- function(
     sort = sort,
     type = type
   )
+
+  return(d)
+}
+
+#' Get All Follows
+#'
+#' @inheritParams get_videos
+#'
+#' @family Users
+#' @export
+#'
+#' @family Videos
+#'
+#' @references https://dev.twitch.tv/docs/api/reference#get-videos
+#'
+#' @examples
+#' \dontrun{
+#' library(twitchr)
+#'
+#' twitch_auth()
+#'
+#' all_videos <- get_all_videos(user_id = 613890167)
+#' }
+get_all_videos <- function(
+  id = NULL,
+  user_id = NULL,
+  game_id = NULL,
+  language = NULL,
+  period = NULL,
+  sort = NULL,
+  type = NULL,
+  clean_json = TRUE
+) {
+  videos <- get_videos(
+    id = id,
+    user_id = user_id,
+    game_id = game_id,
+    language = language,
+    period = period,
+    sort = sort,
+    type = type,
+    clean_json = clean_json,
+    first = 100
+  )
+
+  d <- videos$data
+
+  while (!is.null(videos$pagination)) {
+    videos <- get_videos(
+      id = id,
+      user_id = user_id,
+      game_id = game_id,
+      language = language,
+      period = period,
+      sort = sort,
+      type = type,
+      clean_json = clean_json,
+      first = 100,
+      after = videos$pagination
+    )
+
+    d <-
+      d %>%
+      dplyr::bind_rows(videos$data)
+  }
 
   return(d)
 }
