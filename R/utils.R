@@ -19,7 +19,11 @@ make_request <- function(
 
   response <- httr::GET(url = url_end_point)
 
-  check_status(response)
+  response_check <- check_status(response)
+
+  if (response_check == "bad") {
+    return(NULL)
+  }
 
   response_content <- httr::content(response)
 
@@ -104,6 +108,7 @@ check_status <- function(response) {
 
   if (status_code != 200) {
     usethis::ui_warn("Bad Request (HTTP {response_content$status}). {stringr::str_to_sentence(response_content$message)}.")
+    response_content <- "bad"
   }
 
   return(invisible(response_content))
