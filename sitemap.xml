@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://koderkow.github.io/twitchr/404.html</loc>
+  </url>
+  <url>
+    <loc>https://koderkow.github.io/twitchr/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://koderkow.github.io/twitchr/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://koderkow.github.io/twitchr/authors.html</loc>
+  </url>
+  <url>
     <loc>https://koderkow.github.io/twitchr/index.html</loc>
+  </url>
+  <url>
+    <loc>https://koderkow.github.io/twitchr/news/index.html</loc>
   </url>
   <url>
     <loc>https://koderkow.github.io/twitchr/reference/clean_bits_cheermotes.html</loc>
@@ -49,6 +64,9 @@
     <loc>https://koderkow.github.io/twitchr/reference/get_all_stream_tags.html</loc>
   </url>
   <url>
+    <loc>https://koderkow.github.io/twitchr/reference/get_all_videos.html</loc>
+  </url>
+  <url>
     <loc>https://koderkow.github.io/twitchr/reference/get_chatters.html</loc>
   </url>
   <url>
@@ -77,6 +95,9 @@
   </url>
   <url>
     <loc>https://koderkow.github.io/twitchr/reference/get_videos.html</loc>
+  </url>
+  <url>
+    <loc>https://koderkow.github.io/twitchr/reference/index.html</loc>
   </url>
   <url>
     <loc>https://koderkow.github.io/twitchr/reference/pipe.html</loc>

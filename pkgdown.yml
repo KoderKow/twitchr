@@ -1,8 +1,8 @@
 pandoc: 2.7.3
-pkgdown: 1.6.1
+pkgdown: 2.0.6
 pkgdown_sha: ~
 articles: {}
-last_built: 2021-10-04T01:16Z
+last_built: 2022-08-04T23:30Z
 urls:
   reference: https://koderkow.github.io/twitchr/reference
   article: https://koderkow.github.io/twitchr/articles
