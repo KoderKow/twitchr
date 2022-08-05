@@ -48,15 +48,7 @@ all_videos <- get_all_videos(user_id = 613890167)
 https://dev.twitch.tv/docs/api/reference#get-videos
 }
 \seealso{
-Other Users: 
-\code{\link{get_all_follows}()},
-\code{\link{get_chatters}()},
-\code{\link{get_follows}()},
-\code{\link{get_schedule}()},
-\code{\link{get_users}()}
-
 Other Videos: 
 \code{\link{get_videos}()}
 }
-\concept{Users}
 \concept{Videos}

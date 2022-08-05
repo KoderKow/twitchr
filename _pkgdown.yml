@@ -1,1 +1,44 @@
 url: https://koderkow.github.io/twitchr
+
+template:
+  package: preferably
+  params:
+    toggle: manual
+    twitter:
+      creator: "@koderkow"
+      site: https://koderkow.rbind.io/
+      card: summary_large_image
+
+reference:
+- title: Twitch API
+  desc: >
+    Directly interact with the Twitch API.
+- subtitle: Authenticate
+  contents:
+  - has_concept("Authenticate")
+- subtitle: Bits
+  contents:
+  - has_concept("Bits")
+- subtitle: Clips
+  contents:
+  - has_concept("Clips")
+- subtitle: Games
+  contents:
+  - has_concept("Games")
+- subtitle: Search
+  contents:
+  - has_concept("Search")
+- subtitle: Tags
+  contents:
+  - has_concept("Tags")
+- subtitle: Users
+  contents:
+  - has_concept("Users")
+- subtitle: Videos
+  contents:
+  - has_concept("Videos")
+- subtitle: Hidden Endpoints
+  desc: >
+    For more information on hidden endpoints click [here](https://thomassen.sh/twitch-api-endpoints/).
+  contents:
+  - has_concept("Hidden Endpoints")

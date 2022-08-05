@@ -128,47 +128,6 @@ get_all_follows <- function(
   return(d)
 }
 
-#' Get A Broadcasters Current Chatters
-#'
-#' **This uses undocumented API endpoints. This may change or break at anytime. Use at your own risk!**.
-#'
-#' @param broadcaster A string. The name of the broadcaster.
-#'
-#' @family Users
-#' @export
-#'
-#' @return A tibble data frame of chatter data.
-#'
-#' @references https://twitch.uservoice.com/forums/310213-developers/suggestions/39145294-chatters-viewers-helix-api-endpoint
-#' @examples
-#' \dontrun{
-#' library(twitchr)
-#'
-#' twitch_auth()
-#'
-#' chatters <- get_chatters("KowAndToilet")
-#' }
-get_chatters <- function(broadcaster) {
-  chatters_header <- httr::add_headers(
-    "Client-ID" = "",
-    Authorization = ""
-  )
-
-  broadcaster_lower <- stringr::str_to_lower(broadcaster)
-
-  chatters <-
-    glue("https://tmi.twitch.tv/group/user/{broadcaster_lower}/chatters") %>%
-    httr::GET(chatters_header) %>%
-    httr::content() %>%
-    purrr::pluck("chatters") %>%
-    flatten_keep_names() %>%
-    tibble::enframe("broadcaster_type", "login") %>%
-    tidyr::unnest(login) %>%
-    dplyr::mutate(broadcaster_type = stringr::str_remove(broadcaster_type, "s\\d+$"))
-
-  return(chatters)
-}
-
 #' Get Schedule
 #'
 #' Gets all scheduled broadcasts or specific scheduled broadcasts from a channel’s [stream schedule](https://help.twitch.tv/s/article/channel-page-setup?language=en_US#Schedule). Scheduled broadcasts are defined as “stream segments” in the API.

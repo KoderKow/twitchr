@@ -9,6 +9,8 @@
 #'
 #' @export
 #'
+#' @family Authenticate
+#'
 #' @examples
 #' \dontrun{
 #' library(twitchr)

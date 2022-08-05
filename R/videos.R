@@ -66,7 +66,6 @@ get_videos <- function(
 #'
 #' @inheritParams get_videos
 #'
-#' @family Users
 #' @export
 #'
 #' @family Videos

@@ -3,6 +3,7 @@
 #' @param response_content Content from a HTTP Request. This is expecting to take the output from `httr::content()`.
 #'
 #' @return Clean and tidy tibble.
+#' @noRd
 clean_videos <- function(response_content) {
   data_clean <-
     response_content %>%
@@ -23,6 +24,7 @@ clean_videos <- function(response_content) {
 #' @inheritParams clean_videos
 #'
 #' @return Clean and tidy tibble.
+#' @noRd
 clean_clips <- function(response_content) {
   data_clean <-
     response_content %>%
@@ -43,6 +45,7 @@ clean_clips <- function(response_content) {
 #' @inheritParams clean_videos
 #'
 #' @return Clean and tidy tibble.
+#' @noRd
 clean_bits_cheermotes <- function(response_content) {
   data_raw <-
     response_content %>%
@@ -69,6 +72,7 @@ clean_bits_cheermotes <- function(response_content) {
 #' @inheritParams clean_videos
 #'
 #' @return Clean and tidy tibble.
+#' @noRd
 clean_users <- function(response_content) {
   data_clean <-
     response_content %>%
@@ -84,6 +88,7 @@ clean_users <- function(response_content) {
 #' @inheritParams clean_videos
 #'
 #' @return Clean and tidy tibble.
+#' @noRd
 clean_games <- function(response_content) {
   data_clean <-
     response_content %>%
@@ -98,6 +103,7 @@ clean_games <- function(response_content) {
 #' @inheritParams clean_videos
 #'
 #' @return A named list containing: data, a Clean and tidy tibble. pagination, cursor for pagination.
+#' @noRd
 clean_top_games <- function(response_content) {
   data_clean <-
     response_content %>%
@@ -117,6 +123,7 @@ clean_top_games <- function(response_content) {
 #' @inheritParams clean_videos
 #'
 #' @return A named list containing: data, a Clean and tidy tibble. tags, character vector of current live streamer tags. pagination, cursor for pagination.
+#' @noRd
 clean_search_channels <- function(response_content) {
   ## Need to iterate after the pluck and remove tag_ids possibly
   data_raw <-
@@ -147,6 +154,7 @@ clean_search_channels <- function(response_content) {
 #' @param data_raw_element An element from data_raw/response_content
 #'
 #' @return A list of tags per searched channel
+#' @noRd
 tag_cleaner <- function(data_raw_element) {
   clean_tags <-
     data_raw_element %>%
@@ -161,6 +169,7 @@ tag_cleaner <- function(data_raw_element) {
 #' @inheritParams clean_videos
 #'
 #' @return A named list containing: data, a Clean and tidy tibble. pagination, cursor for pagination.
+#' @noRd
 clean_get_all_stream_tags <- function(response_content) {
   data_clean <-
     response_content %>%
@@ -194,6 +203,7 @@ get_all_tags_response_cleaner <- function(data_raw_element) {
 #' @inheritParams clean_get_all_stream_tags
 #'
 #' @return Clean and tidy tibble.
+#' @noRd
 clean_stream_tags <- function(response_content) {
   data_clean <-
     response_content %>%
@@ -208,6 +218,7 @@ clean_stream_tags <- function(response_content) {
 #' @inheritParams clean_videos
 #'
 #' @return A named list containing: data, a Clean and tidy tibble. pagination, cursor for pagination.
+#' @noRd
 clean_search_categories <- function(response_content) {
   data_clean <-
     response_content %>%
@@ -227,6 +238,7 @@ clean_search_categories <- function(response_content) {
 #' @inheritParams clean_videos
 #'
 #' @return A named list containing: data, a Clean and tidy tibble. pagination, cursor for pagination.
+#' @noRd
 clean_get_follows <- function(response_content) {
   data_clean <-
     response_content %>%
@@ -247,6 +259,7 @@ clean_get_follows <- function(response_content) {
 #' @inheritParams clean_videos
 #'
 #' @return A named list containing: data, a Clean and tidy tibble. vacation, if not `NULL`, a clean and tidy tibble. pagination, cursor for pagination.
+#' @noRd
 clean_get_schedule <- function(response_content) {
   response_data <-
     response_content %>%

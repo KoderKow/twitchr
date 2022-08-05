@@ -27,3 +27,4 @@ library(twitchr)
 twitch_auth()
 }
 }
+\concept{Authenticate}
