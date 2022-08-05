@@ -19,42 +19,6 @@
     <loc>https://koderkow.github.io/twitchr/news/index.html</loc>
   </url>
   <url>
-    <loc>https://koderkow.github.io/twitchr/reference/clean_bits_cheermotes.html</loc>
-  </url>
-  <url>
-    <loc>https://koderkow.github.io/twitchr/reference/clean_clips.html</loc>
-  </url>
-  <url>
-    <loc>https://koderkow.github.io/twitchr/reference/clean_games.html</loc>
-  </url>
-  <url>
-    <loc>https://koderkow.github.io/twitchr/reference/clean_get_all_stream_tags.html</loc>
-  </url>
-  <url>
-    <loc>https://koderkow.github.io/twitchr/reference/clean_get_follows.html</loc>
-  </url>
-  <url>
-    <loc>https://koderkow.github.io/twitchr/reference/clean_get_schedule.html</loc>
-  </url>
-  <url>
-    <loc>https://koderkow.github.io/twitchr/reference/clean_search_categories.html</loc>
-  </url>
-  <url>
-    <loc>https://koderkow.github.io/twitchr/reference/clean_search_channels.html</loc>
-  </url>
-  <url>
-    <loc>https://koderkow.github.io/twitchr/reference/clean_stream_tags.html</loc>
-  </url>
-  <url>
-    <loc>https://koderkow.github.io/twitchr/reference/clean_top_games.html</loc>
-  </url>
-  <url>
-    <loc>https://koderkow.github.io/twitchr/reference/clean_users.html</loc>
-  </url>
-  <url>
-    <loc>https://koderkow.github.io/twitchr/reference/clean_videos.html</loc>
-  </url>
-  <url>
     <loc>https://koderkow.github.io/twitchr/reference/get_all_clips.html</loc>
   </url>
   <url>
@@ -107,9 +71,6 @@
   </url>
   <url>
     <loc>https://koderkow.github.io/twitchr/reference/search_channels.html</loc>
-  </url>
-  <url>
-    <loc>https://koderkow.github.io/twitchr/reference/tag_cleaner.html</loc>
   </url>
   <url>
     <loc>https://koderkow.github.io/twitchr/reference/twitch_auth.html</loc>
