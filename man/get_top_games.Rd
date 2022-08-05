@@ -2,7 +2,7 @@
 % Please edit documentation in R/games.R
 \name{get_top_games}
 \alias{get_top_games}
-\title{Get Top Games}
+\title{Get top games}
 \usage{
 get_top_games(after = NULL, before = NULL, first = 20, clean_json = TRUE)
 }
@@ -31,7 +31,7 @@ top_games <- get_top_games()
 }
 }
 \references{
-https://dev.twitch.tv/docs/api/reference#get-top-games
+\url{https://dev.twitch.tv/docs/api/reference#get-top-games}
 }
 \seealso{
 Other Games: 

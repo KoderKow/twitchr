@@ -1,15 +1,15 @@
-#' Get A Broadcasters Current Chatters
+#' Get a broadcasters current chatters
 #'
 #' **This uses undocumented API endpoints. This may change or break at anytime. Use at your own risk!**.
 #'
-#' @param broadcaster A string. The name of the broadcaster.
+#' @param broadcaster A character. The name of the broadcaster.
 #'
 #' @family Hidden Endpoints
 #' @export
 #'
 #' @return A tibble data frame of chatter data.
 #'
-#' @references https://thomassen.sh/twitch-api-endpoints/
+#' @references <https://thomassen.sh/twitch-api-endpoints/#tmi.twitch.tv/group/user/{USERNAME}/chatters>
 #' @examples
 #' \dontrun{
 #' library(twitchr)

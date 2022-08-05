@@ -2,7 +2,7 @@
 % Please edit documentation in R/users.R
 \name{get_follows}
 \alias{get_follows}
-\title{Get Follows}
+\title{Get follows}
 \usage{
 get_follows(
   from_id = NULL,
@@ -27,7 +27,7 @@ get_follows(
 A tibble data frame of follower data.
 }
 \description{
-Get Follows
+Get follows
 }
 \examples{
 \dontrun{
@@ -41,7 +41,7 @@ followers <- get_follows(to_id = user$id)
 }
 }
 \references{
-https://dev.twitch.tv/docs/api/reference#get-users-follows
+\url{https://dev.twitch.tv/docs/api/reference#get-users-follows}
 }
 \seealso{
 Other Users: 

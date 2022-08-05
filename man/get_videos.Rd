@@ -2,7 +2,7 @@
 % Please edit documentation in R/videos.R
 \name{get_videos}
 \alias{get_videos}
-\title{Get Video Information}
+\title{Get video information}
 \usage{
 get_videos(
   id = NULL,
@@ -58,7 +58,7 @@ videos <- get_videos(user_id = 613890167)
 }
 }
 \references{
-https://dev.twitch.tv/docs/api/reference#get-videos
+\url{https://dev.twitch.tv/docs/api/reference#get-videos}
 }
 \seealso{
 Other Videos: 

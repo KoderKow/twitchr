@@ -2,12 +2,12 @@
 % Please edit documentation in R/search.R
 \name{search_categories}
 \alias{search_categories}
-\title{Search for Games or Categories}
+\title{Search for games or categories}
 \usage{
 search_categories(query = NULL, first = NULL, after = NULL, clean_json = TRUE)
 }
 \arguments{
-\item{query}{A character.     URl encoded search query.}
+\item{query}{A character. URL encoded search query.}
 
 \item{first}{A numeric. Maximum number of objects to return. Maximum: 100. Default: 20.}
 
@@ -31,7 +31,7 @@ search_results <- search_channels("fort")
 }
 }
 \references{
-https://dev.twitch.tv/docs/api/reference#search-categories
+\url{https://dev.twitch.tv/docs/api/reference#search-categories}
 }
 \seealso{
 Other Search: 

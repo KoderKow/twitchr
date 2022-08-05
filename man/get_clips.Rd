@@ -2,7 +2,7 @@
 % Please edit documentation in R/clips.R
 \name{get_clips}
 \alias{get_clips}
-\title{Get Clips}
+\title{Get clips}
 \usage{
 get_clips(
   broadcaster_id = NULL,
@@ -17,11 +17,11 @@ get_clips(
 )
 }
 \arguments{
-\item{broadcaster_id}{A character. ID of the broadcaster for whom clips are returned. The number of clips returned is determined by the first query-string parameter (default: 20). Results are ordered by view count.}
+\item{broadcaster_id}{A numeric. ID of the broadcaster for whom clips are returned. The number of clips returned is determined by the first query-string parameter (default: 20). Results are ordered by view count.}
 
-\item{game_id}{A character. ID of the game for which clips are returned. The number of clips returned is determined by the first query-string parameter (default: 20). Results are ordered by view count.}
+\item{game_id}{A numeric. ID of the game for which clips are returned. The number of clips returned is determined by the first query-string parameter (default: 20). Results are ordered by view count.}
 
-\item{id}{A character. ID of the clip being queried. Limit: 100.}
+\item{id}{A numeric. ID of the clip being queried. Limit: 100.}
 
 \item{after}{A character. Cursor for forward pagination: tells the server where to start fetching the next set of results, in a multi-page response. This applies only to queries specifying broadcaster_id or game_id. The cursor value specified here is from the pagination response field of a prior query.}
 
@@ -51,7 +51,7 @@ clips <- get_clips(broadcaster_id = user$id)
 }
 }
 \references{
-https://dev.twitch.tv/docs/api/reference#get-clips
+\url{https://dev.twitch.tv/docs/api/reference#get-clips}
 }
 \seealso{
 Other Clips: 

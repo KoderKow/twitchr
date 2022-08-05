@@ -2,7 +2,7 @@
 % Please edit documentation in R/search.R
 \name{search_channels}
 \alias{search_channels}
-\title{Search Channels}
+\title{Search channels}
 \usage{
 search_channels(
   query = NULL,
@@ -39,7 +39,7 @@ search_results <- search_channels("KowAndToilet")
 }
 }
 \references{
-https://dev.twitch.tv/docs/api/reference#search-channels
+\url{https://dev.twitch.tv/docs/api/reference#search-channels}
 }
 \seealso{
 Other Search: 

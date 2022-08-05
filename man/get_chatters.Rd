@@ -2,12 +2,12 @@
 % Please edit documentation in R/hidden_endpoints.R
 \name{get_chatters}
 \alias{get_chatters}
-\title{Get A Broadcasters Current Chatters}
+\title{Get a broadcasters current chatters}
 \usage{
 get_chatters(broadcaster)
 }
 \arguments{
-\item{broadcaster}{A string. The name of the broadcaster.}
+\item{broadcaster}{A character. The name of the broadcaster.}
 }
 \value{
 A tibble data frame of chatter data.
@@ -25,6 +25,6 @@ chatters <- get_chatters("KowAndToilet")
 }
 }
 \references{
-https://thomassen.sh/twitch-api-endpoints/
+\url{https://thomassen.sh/twitch-api-endpoints/#tmi.twitch.tv/group/user/{USERNAME}/chatters}
 }
 \concept{Hidden Endpoints}

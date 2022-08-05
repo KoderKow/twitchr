@@ -2,7 +2,7 @@
 % Please edit documentation in R/videos.R
 \name{get_all_videos}
 \alias{get_all_videos}
-\title{Get All Follows}
+\title{Get all follows}
 \usage{
 get_all_videos(
   id = NULL,
@@ -33,7 +33,7 @@ get_all_videos(
 \item{clean_json}{A logical. If \code{TRUE}, clean and tidy the data. If \code{FALSE}, return the result of \code{httr::content}.}
 }
 \description{
-Get All Follows
+Get all follows
 }
 \examples{
 \dontrun{
@@ -45,7 +45,7 @@ all_videos <- get_all_videos(user_id = 613890167)
 }
 }
 \references{
-https://dev.twitch.tv/docs/api/reference#get-videos
+\url{https://dev.twitch.tv/docs/api/reference#get-videos}
 }
 \seealso{
 Other Videos: 

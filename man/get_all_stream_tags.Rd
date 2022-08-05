@@ -2,7 +2,7 @@
 % Please edit documentation in R/tags.R
 \name{get_all_stream_tags}
 \alias{get_all_stream_tags}
-\title{Get All Stream Tags}
+\title{Get all stream tags}
 \usage{
 get_all_stream_tags(
   after = NULL,
@@ -17,7 +17,7 @@ get_all_stream_tags(
 
 \item{first}{A numeric. Maximum number of objects to return. Maximum: 100. Default: 20.}
 
-\item{tag_id}{A character. ID of a tag. Multiple IDs can be specified, separated by ampersands. If provided, only the specified tag(s) is(are) returned. Maximum of 100.}
+\item{tag_id}{A numeric. ID of a tag. Multiple IDs can be specified, separated by ampersands. If provided, only the specified tag(s) is(are) returned. Maximum of 100.}
 
 \item{language}{A character. Default \code{en-us} (English US). Options include: bg-bg, cs-cz, da-dk, de-de, el-gr, en-us, es-es, es-mx, fi-fi, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, no-no, pl-pl, pt-br, pt-pt, ro-ro, ru-ru, sk-sk, sv-se, th-th, tr-tr, vi-vn, zh-cn, zh-tw, bg-bg, cs-cz, da-dk, de-de, el-gr, en-us, es-es, es-mx, fi-fi, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, no-no, pl-pl, pt-br, pt-pt, ro-ro, ru-ru, sk-sk, sv-se, th-th, tr-tr, vi-vn, zh-cn, zh-tw, bg-bg, cs-cz, da-dk, de-de, el-gr, en-us, es-es, es-mx, fi-fi, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, no-no, pl-pl, pt-br, pt-pt, ro-ro, ru-ru, sk-sk, sv-se, th-th, tr-tr, vi-vn, zh-cn, zh-tw.}
 
@@ -27,7 +27,7 @@ get_all_stream_tags(
 A tibble data frame of stream tag data.
 }
 \description{
-Get All Stream Tags
+Get all stream tags
 }
 \examples{
 \dontrun{
@@ -39,7 +39,7 @@ tags <- get_all_stream_tags(first = 3)
 }
 }
 \references{
-https://dev.twitch.tv/docs/api/reference#get-all-stream-tags
+\url{https://dev.twitch.tv/docs/api/reference#get-all-stream-tags}
 }
 \seealso{
 Other Tags: 

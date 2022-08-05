@@ -2,12 +2,12 @@
 % Please edit documentation in R/tags.R
 \name{get_stream_tags}
 \alias{get_stream_tags}
-\title{Get Stream Tags}
+\title{Get stream tags}
 \usage{
 get_stream_tags(broadcaster_id = NULL, language = "en-us", clean_json = TRUE)
 }
 \arguments{
-\item{broadcaster_id}{A character. ID of the stream thats tags are going to be fetched.}
+\item{broadcaster_id}{A numeric. ID of the stream thats tags are going to be fetched.}
 
 \item{language}{A character. Default \code{en-us} (English US). Options include: bg-bg, cs-cz, da-dk, de-de, el-gr, en-us, es-es, es-mx, fi-fi, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, no-no, pl-pl, pt-br, pt-pt, ro-ro, ru-ru, sk-sk, sv-se, th-th, tr-tr, vi-vn, zh-cn, zh-tw, bg-bg, cs-cz, da-dk, de-de, el-gr, en-us, es-es, es-mx, fi-fi, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, no-no, pl-pl, pt-br, pt-pt, ro-ro, ru-ru, sk-sk, sv-se, th-th, tr-tr, vi-vn, zh-cn, zh-tw, bg-bg, cs-cz, da-dk, de-de, el-gr, en-us, es-es, es-mx, fi-fi, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, no-no, pl-pl, pt-br, pt-pt, ro-ro, ru-ru, sk-sk, sv-se, th-th, tr-tr, vi-vn, zh-cn, zh-tw.}
 
@@ -31,7 +31,7 @@ tags <- get_stream_tags(broadcaster_id = user$id)
 }
 }
 \references{
-https://dev.twitch.tv/docs/api/reference#get-stream-tags
+\url{https://dev.twitch.tv/docs/api/reference#get-stream-tags}
 }
 \seealso{
 Other Tags: 

@@ -17,6 +17,7 @@ R wrapper for the Twitch API.
 ### From Github
 
 ``` r
+# install.packages("devtools")
 devtools::install_github("koderkow/twitch")
 ```
 
@@ -73,11 +74,13 @@ user <- get_users(login = "KowAndToilet")
 
 user
 #> # A tibble: 1 x 10
-#>   id      login display_name type  broadcaster_type description profile_image_u~
-#>   <chr>   <chr> <chr>        <chr> <chr>            <chr>       <chr>           
-#> 1 613890~ kowa~ kowandtoilet ""    affiliate        Kyle and L~ https://static-~
-#> # ... with 3 more variables: offline_image_url <chr>, view_count <int>,
-#> #   created_at <dttm>
+#>   id        login        display~1 type  broad~2 descr~3 profi~4 offli~5 view_~6
+#>   <chr>     <chr>        <chr>     <chr> <chr>   <chr>   <chr>   <chr>     <int>
+#> 1 613890167 kowandtoilet kowandto~ ""    affili~ Kyle a~ https:~ https:~    4989
+#> # ... with 1 more variable: created_at <dttm>, and abbreviated variable names
+#> #   1: display_name, 2: broadcaster_type, 3: description, 4: profile_image_url,
+#> #   5: offline_image_url, 6: view_count
+#> # i Use `colnames()` to see all variable names
 ```
 
 ### Get Videos

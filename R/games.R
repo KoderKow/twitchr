@@ -1,9 +1,9 @@
-#' Get Games
+#' Get games
 #'
 #' Gets game information by game ID or name. For a query to be valid, `name` and/or `id` must be specified.
 #'
-#' @param id A character. Game ID. At most 100 id values can be specified.
-#' @param name A character. Game name. The name must be an exact match. For example, “Pokemon” will not return a list of Pokemon games; instead, query any specific Pokemon games in which you are interested. At most 100 name values can be specified.
+#' @param id A numeric. Game ID. At most 100 id values can be specified.
+#' @param name A numeric. Game name. The name must be an exact match. For example, “Pokemon” will not return a list of Pokemon games; instead, query any specific Pokemon games in which you are interested. At most 100 name values can be specified.
 #' @inheritParams get_cheermotes
 #'
 #' @family Games
@@ -11,7 +11,7 @@
 #'
 #' @return A tibble data frame of game data.
 #'
-#' @references https://dev.twitch.tv/docs/api/reference#get-games
+#' @references <https://dev.twitch.tv/docs/api/reference#get-games>
 #'
 #' @examples
 #' \dontrun{
@@ -36,7 +36,7 @@ get_games <- function(
   return(d)
 }
 
-#' Get Top Games
+#' Get top games
 #'
 #' Gets games sorted by number of current viewers on Twitch, most popular first.
 #'
@@ -50,7 +50,7 @@ get_games <- function(
 #'
 #' @return A tibble data frame of top game data.
 #'
-#' @references https://dev.twitch.tv/docs/api/reference#get-top-games
+#' @references <https://dev.twitch.tv/docs/api/reference#get-top-games>
 #' @examples
 #' \dontrun{
 #' library(twitchr)

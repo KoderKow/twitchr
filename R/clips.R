@@ -1,10 +1,10 @@
-#' Get Clips
+#' Get clips
 #'
 #' Gets clip information by clip ID (one or more), broadcaster ID (one only), or game ID (one only). Note: The clips service returns a maximum of 1000 clips. For a query to be valid, `id` (one or more), `broadcaster_id`, or `game_id` must be specified. You may specify only one of these parameters.
 #'
-#' @param broadcaster_id A character. ID of the broadcaster for whom clips are returned. The number of clips returned is determined by the first query-string parameter (default: 20). Results are ordered by view count.
-#' @param game_id A character. ID of the game for which clips are returned. The number of clips returned is determined by the first query-string parameter (default: 20). Results are ordered by view count.
-#' @param id A character. ID of the clip being queried. Limit: 100.
+#' @param broadcaster_id A numeric. ID of the broadcaster for whom clips are returned. The number of clips returned is determined by the first query-string parameter (default: 20). Results are ordered by view count.
+#' @param game_id A numeric. ID of the game for which clips are returned. The number of clips returned is determined by the first query-string parameter (default: 20). Results are ordered by view count.
+#' @param id A numeric. ID of the clip being queried. Limit: 100.
 #' @param after A character. Cursor for forward pagination: tells the server where to start fetching the next set of results, in a multi-page response. This applies only to queries specifying broadcaster_id or game_id. The cursor value specified here is from the pagination response field of a prior query.
 #' @param before A character. Cursor for backward pagination: tells the server where to start fetching the next set of results, in a multi-page response. This applies only to queries specifying broadcaster_id or game_id. The cursor value specified here is from the pagination response field of a prior query.
 #' @param ended_at A character. Ending date/time for returned clips, in RFC3339 format. (Note that the seconds value is ignored.) If this is specified, started_at also must be specified; otherwise, the time period is ignored.
@@ -17,7 +17,7 @@
 #'
 #' @return A tibble data frame of clip data.
 #'
-#' @references https://dev.twitch.tv/docs/api/reference#get-clips
+#' @references <https://dev.twitch.tv/docs/api/reference#get-clips>
 #' @examples
 #' \dontrun{
 #' twitch_auth()
@@ -53,7 +53,7 @@ get_clips <- function(
   return(d)
 }
 
-#' Get All Clips
+#' Get all clips
 #'
 #' Gets clip information by broadcaster ID (one only), or game ID (one only). This function will handle pagination with `get_clips` automatically. Using at least one of the following parameters is required; `broadcaster_id` or `game_id`.
 #'
@@ -64,7 +64,7 @@ get_clips <- function(
 #'
 #' @return A tibble data frame of clip data.
 #'
-#' @references https://dev.twitch.tv/docs/api/reference#get-clips
+#' @references <https://dev.twitch.tv/docs/api/reference#get-clips>
 #' @examples
 #' \dontrun{
 #' twitch_auth()

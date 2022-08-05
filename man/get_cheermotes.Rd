@@ -27,6 +27,6 @@ cheermotes <- get_cheermotes(broadcaster_id = user$id)
 }
 }
 \references{
-https://dev.twitch.tv/docs/api/reference#get-cheermotes
+\url{https://dev.twitch.tv/docs/api/reference#get-cheermotes}
 }
 \concept{Bits}

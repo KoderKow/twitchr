@@ -2,7 +2,7 @@
 % Please edit documentation in R/clips.R
 \name{get_all_clips}
 \alias{get_all_clips}
-\title{Get All Clips}
+\title{Get all clips}
 \usage{
 get_all_clips(
   broadcaster_id = NULL,
@@ -12,9 +12,9 @@ get_all_clips(
 )
 }
 \arguments{
-\item{broadcaster_id}{A character. ID of the broadcaster for whom clips are returned. The number of clips returned is determined by the first query-string parameter (default: 20). Results are ordered by view count.}
+\item{broadcaster_id}{A numeric. ID of the broadcaster for whom clips are returned. The number of clips returned is determined by the first query-string parameter (default: 20). Results are ordered by view count.}
 
-\item{game_id}{A character. ID of the game for which clips are returned. The number of clips returned is determined by the first query-string parameter (default: 20). Results are ordered by view count.}
+\item{game_id}{A numeric. ID of the game for which clips are returned. The number of clips returned is determined by the first query-string parameter (default: 20). Results are ordered by view count.}
 
 \item{ended_at}{A character. Ending date/time for returned clips, in RFC3339 format. (Note that the seconds value is ignored.) If this is specified, started_at also must be specified; otherwise, the time period is ignored.}
 
@@ -36,7 +36,7 @@ all_clips <- get_all_clips(broadcaster_id = user$id)
 }
 }
 \references{
-https://dev.twitch.tv/docs/api/reference#get-clips
+\url{https://dev.twitch.tv/docs/api/reference#get-clips}
 }
 \seealso{
 Other Clips: 

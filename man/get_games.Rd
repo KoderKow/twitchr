@@ -2,14 +2,14 @@
 % Please edit documentation in R/games.R
 \name{get_games}
 \alias{get_games}
-\title{Get Games}
+\title{Get games}
 \usage{
 get_games(id = NULL, name = NULL, clean_json = TRUE)
 }
 \arguments{
-\item{id}{A character. Game ID. At most 100 id values can be specified.}
+\item{id}{A numeric. Game ID. At most 100 id values can be specified.}
 
-\item{name}{A character. Game name. The name must be an exact match. For example, “Pokemon” will not return a list of Pokemon games; instead, query any specific Pokemon games in which you are interested. At most 100 name values can be specified.}
+\item{name}{A numeric. Game name. The name must be an exact match. For example, “Pokemon” will not return a list of Pokemon games; instead, query any specific Pokemon games in which you are interested. At most 100 name values can be specified.}
 
 \item{clean_json}{A logical. If \code{TRUE}, clean and tidy the data. If \code{FALSE}, return the result of \code{httr::content}.}
 }
@@ -29,7 +29,7 @@ games <- get_games(name = c("Battletoads", "Stardew Valley"))
 }
 }
 \references{
-https://dev.twitch.tv/docs/api/reference#get-games
+\url{https://dev.twitch.tv/docs/api/reference#get-games}
 }
 \seealso{
 Other Games: 

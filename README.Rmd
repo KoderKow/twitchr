@@ -27,6 +27,7 @@ R wrapper for the Twitch API.
 ### From Github
 
 ```{r, eval=FALSE}
+# install.packages("devtools")
 devtools::install_github("koderkow/twitch")
 ```
 

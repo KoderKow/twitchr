@@ -1,4 +1,4 @@
-#' Get Auth Token
+#' Get auth token
 #'
 #' Get started with the Twitch API [here](https://dev.twitch.tv/docs/api/). `TWITCH_CLIENT_ID` and `TWITCH_SECRET` need to be set in the *.Renviron* file. Set these values in *.Renviron* with `usethis::edit_r_environ()`; ex: `TWITCH_CLIENT_ID=abc123`.
 #'
@@ -7,9 +7,8 @@
 #'
 #' @return Invisible authorization data.
 #'
-#' @export
-#'
 #' @family Authenticate
+#' @export
 #'
 #' @examples
 #' \dontrun{

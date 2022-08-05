@@ -2,7 +2,7 @@
 % Please edit documentation in R/twitch_auth.R
 \name{twitch_auth}
 \alias{twitch_auth}
-\title{Get Auth Token}
+\title{Get auth token}
 \usage{
 twitch_auth(
   client_id = Sys.getenv("TWITCH_CLIENT_ID"),

@@ -1,4 +1,4 @@
-#' Search Channels
+#' Search channels
 #'
 #' Returns a list of channels (users who have streamed within the past 6 months) that match the query via channel name or description either entirely or partially. Results include both live and offline channels. Online channels will have additional metadata (e.g. started_at, tag_ids).
 #'
@@ -13,7 +13,7 @@
 #'
 #' @return A tibble data frame of search channel data.
 #'
-#' @references https://dev.twitch.tv/docs/api/reference#search-channels
+#' @references <https://dev.twitch.tv/docs/api/reference#search-channels>
 #' @examples
 #' \dontrun{
 #' library(twitchr)
@@ -38,21 +38,21 @@ search_channels <- function(
   return(d)
 }
 
-#' Search for Games or Categories
+#' Search for games or categories
 #'
 #' Returns a list of games or categories that match the query via name either entirely or partially.
 #'
-#' @param query A character. 	URl encoded search query.
+#' @param query A character. URL encoded search query.
 #' @param first A numeric. Maximum number of objects to return. Maximum: 100. Default: 20.
 #' @param after Cursor for forward pagination: tells the server where to start fetching the next set of results, in a multi-page response. The cursor value specified here is from the pagination response field of a prior query.
 #' @inheritParams get_cheermotes
 #'
+#' @family Search
 #' @export
 #'
 #' @return A tibble data frame of search categories data.
 #'
-#' @family Search
-#' @references https://dev.twitch.tv/docs/api/reference#search-categories
+#' @references <https://dev.twitch.tv/docs/api/reference#search-categories>
 #' @examples
 #' \dontrun{
 #' library(twitchr)

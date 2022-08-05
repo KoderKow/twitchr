@@ -2,7 +2,7 @@
 % Please edit documentation in R/users.R
 \name{get_schedule}
 \alias{get_schedule}
-\title{Get Schedule}
+\title{Get schedule}
 \usage{
 get_schedule(
   broadcaster_id = NULL,
@@ -53,7 +53,7 @@ schedule <- get_schedule(users$id)
 }
 }
 \references{
-https://dev.twitch.tv/docs/api/reference#get-channel-stream-schedule
+\url{https://dev.twitch.tv/docs/api/reference#get-channel-stream-schedule}
 }
 \seealso{
 Other Users: 

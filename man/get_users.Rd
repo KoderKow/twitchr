@@ -2,7 +2,7 @@
 % Please edit documentation in R/users.R
 \name{get_users}
 \alias{get_users}
-\title{Get Users}
+\title{Get users}
 \usage{
 get_users(id = NULL, login = NULL, clean_json = TRUE)
 }
@@ -29,7 +29,7 @@ users <- get_users(login = "KowAndToilet")
 }
 }
 \references{
-https://dev.twitch.tv/docs/api/reference#get-users
+\url{https://dev.twitch.tv/docs/api/reference#get-users}
 }
 \seealso{
 Other Users: 

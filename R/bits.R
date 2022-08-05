@@ -10,7 +10,7 @@
 #'
 #' @return A tibble data frame of cheermote data.
 #'
-#' @references https://dev.twitch.tv/docs/api/reference#get-cheermotes
+#' @references <https://dev.twitch.tv/docs/api/reference#get-cheermotes>
 #' @examples
 #' \dontrun{
 #' twitch_auth()

@@ -1,4 +1,4 @@
-#' Get Users
+#' Get users
 #'
 #' Gets information about one or more specified Twitch users. Users are identified by optional user IDs and/or login name. If neither a user ID nor a login name is specified, the user is looked up by Bearer token. *Note: This package does not support the bearer token at this time.*
 #'
@@ -6,12 +6,12 @@
 #' @param login A character. Optional. User login name. Multiple login names can be specified. Limit: 100.
 #' @inheritParams get_cheermotes
 #'
+#' @family Users
 #' @export
 #'
 #' @return A tibble data frame of twitch user data.
 #'
-#' @family Users
-#' @references https://dev.twitch.tv/docs/api/reference#get-users
+#' @references <https://dev.twitch.tv/docs/api/reference#get-users>
 #'
 #' @examples
 #' \dontrun{
@@ -36,7 +36,7 @@ get_users <- function(
   return(d)
 }
 
-#' Get Follows
+#' Get follows
 #'
 #' @param from_id A character. User ID. The request returns information about users who are being followed by the from_id user.
 #' @param to_id A character. User ID. The request returns information about users who are following the to_id user.
@@ -44,12 +44,12 @@ get_users <- function(
 #' @param first A numeric. Maximum number of objects to return. Maximum: 100. Default: 20.
 #' @inheritParams get_cheermotes
 #'
+#' @family Users
 #' @export
 #'
 #' @return A tibble data frame of follower data.
 #'
-#' @family Users
-#' @references https://dev.twitch.tv/docs/api/reference#get-users-follows
+#' @references <https://dev.twitch.tv/docs/api/reference#get-users-follows>
 #'
 #' @examples
 #' \dontrun{
@@ -80,7 +80,7 @@ get_follows <- function(
   return(d)
 }
 
-#' Get All Follows
+#' Get all follows
 #'
 #' @inheritParams get_follows
 #'
@@ -89,7 +89,7 @@ get_follows <- function(
 #'
 #' @return A tibble data frame of all follower data.
 #'
-#' @references https://dev.twitch.tv/docs/api/reference#get-clips
+#' @references <https://dev.twitch.tv/docs/api/reference#get-clips>
 #' @examples
 #' \dontrun{
 #' library(twitchr)
@@ -128,7 +128,7 @@ get_all_follows <- function(
   return(d)
 }
 
-#' Get Schedule
+#' Get schedule
 #'
 #' Gets all scheduled broadcasts or specific scheduled broadcasts from a channel’s [stream schedule](https://help.twitch.tv/s/article/channel-page-setup?language=en_US#Schedule). Scheduled broadcasts are defined as “stream segments” in the API.
 #'
@@ -143,10 +143,11 @@ get_all_follows <- function(
 #' @inheritParams get_cheermotes
 #'
 #' @return A named list. `data` (tibble): the users schedule, NULL if no schudule. `vacation` (tibble): the users vacation dates, NULL if no vacation. `pagination` (character): Pagination value for the `after` parameter to get more data.
-#' @export
 #'
 #' @family Users
-#' @references https://dev.twitch.tv/docs/api/reference#get-channel-stream-schedule
+#' @export
+#'
+#' @references <https://dev.twitch.tv/docs/api/reference#get-channel-stream-schedule>
 #'
 #' @examples
 #' \dontrun{

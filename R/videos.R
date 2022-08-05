@@ -1,4 +1,4 @@
-#' Get Video Information
+#' Get video information
 #'
 #' Gets video information by video ID (one or more), user ID (one only), or game ID (one only). The following param description is from the Twitch API docs. Last Updated on 2020-11-22.
 #'
@@ -14,13 +14,12 @@
 #' @param type A string. Optional. ype of video. Valid values: "all", "upload", "archive", "highlight". Default: "all".
 #' @inheritParams get_cheermotes
 #'
+#' @family Videos
 #' @export
 #'
 #' @return A tibble data frame of videos data.
 #'
-#' @family Videos
-#'
-#' @references https://dev.twitch.tv/docs/api/reference#get-videos
+#' @references <https://dev.twitch.tv/docs/api/reference#get-videos>
 #'
 #' @examples
 #' \dontrun{
@@ -62,15 +61,15 @@ get_videos <- function(
   return(d)
 }
 
-#' Get All Follows
+#' Get all follows
 #'
 #' @inheritParams get_videos
 #'
+#' @family Videos
 #' @export
 #'
-#' @family Videos
 #'
-#' @references https://dev.twitch.tv/docs/api/reference#get-videos
+#' @references <https://dev.twitch.tv/docs/api/reference#get-videos>
 #'
 #' @examples
 #' \dontrun{

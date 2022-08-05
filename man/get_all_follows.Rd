@@ -2,7 +2,7 @@
 % Please edit documentation in R/users.R
 \name{get_all_follows}
 \alias{get_all_follows}
-\title{Get All Follows}
+\title{Get all follows}
 \usage{
 get_all_follows(from_id = NULL, to_id = NULL)
 }
@@ -15,7 +15,7 @@ get_all_follows(from_id = NULL, to_id = NULL)
 A tibble data frame of all follower data.
 }
 \description{
-Get All Follows
+Get all follows
 }
 \examples{
 \dontrun{
@@ -29,7 +29,7 @@ all_followers <- get_all_follows(to_id = user$id)
 }
 }
 \references{
-https://dev.twitch.tv/docs/api/reference#get-clips
+\url{https://dev.twitch.tv/docs/api/reference#get-clips}
 }
 \seealso{
 Other Users: 

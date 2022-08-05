@@ -1,8 +1,8 @@
-#' Get All Stream Tags
+#' Get all stream tags
 #'
 #' @param after A character. Cursor for forward pagination: tells the server where to start fetching the next set of results, in a multi-page response. The cursor value specified here is from the pagination response field of a prior query.
 #' @param first A numeric. Maximum number of objects to return. Maximum: 100. Default: 20.
-#' @param tag_id A character. ID of a tag. Multiple IDs can be specified, separated by ampersands. If provided, only the specified tag(s) is(are) returned. Maximum of 100.
+#' @param tag_id A numeric. ID of a tag. Multiple IDs can be specified, separated by ampersands. If provided, only the specified tag(s) is(are) returned. Maximum of 100.
 #' @param language A character. Default `en-us` (English US). Options include: bg-bg, cs-cz, da-dk, de-de, el-gr, en-us, es-es, es-mx, fi-fi, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, no-no, pl-pl, pt-br, pt-pt, ro-ro, ru-ru, sk-sk, sv-se, th-th, tr-tr, vi-vn, zh-cn, zh-tw, bg-bg, cs-cz, da-dk, de-de, el-gr, en-us, es-es, es-mx, fi-fi, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, no-no, pl-pl, pt-br, pt-pt, ro-ro, ru-ru, sk-sk, sv-se, th-th, tr-tr, vi-vn, zh-cn, zh-tw, bg-bg, cs-cz, da-dk, de-de, el-gr, en-us, es-es, es-mx, fi-fi, fr-fr, hu-hu, it-it, ja-jp, ko-kr, nl-nl, no-no, pl-pl, pt-br, pt-pt, ro-ro, ru-ru, sk-sk, sv-se, th-th, tr-tr, vi-vn, zh-cn, zh-tw.
 #' @inheritParams get_cheermotes
 #'
@@ -11,7 +11,7 @@
 #'
 #' @return A tibble data frame of stream tag data.
 #'
-#' @references https://dev.twitch.tv/docs/api/reference#get-all-stream-tags
+#' @references <https://dev.twitch.tv/docs/api/reference#get-all-stream-tags>
 #' @examples
 #' \dontrun{
 #' library(twitchr)
@@ -45,11 +45,11 @@ get_all_stream_tags <- function(
   return(d)
 }
 
-#' Get Stream Tags
+#' Get stream tags
 #'
 #' Gets the list of tags for a specified stream (channel).
 #'
-#' @param broadcaster_id A character. ID of the stream thats tags are going to be fetched.
+#' @param broadcaster_id A numeric. ID of the stream thats tags are going to be fetched.
 #' @inheritParams get_cheermotes
 #' @inheritParams get_all_stream_tags
 #'
@@ -58,7 +58,7 @@ get_all_stream_tags <- function(
 #'
 #' @return A tibble data frame of stream tag data.
 #'
-#' @references https://dev.twitch.tv/docs/api/reference#get-stream-tags
+#' @references <https://dev.twitch.tv/docs/api/reference#get-stream-tags>
 #' @examples
 #' \dontrun{
 #' library(twitchr)
