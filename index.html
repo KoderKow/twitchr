@@ -105,7 +105,8 @@
 <h3 id="from-github">From Github<a class="anchor" aria-label="anchor" href="#from-github"></a>
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"koderkow/twitch"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"koderkow/twitch"</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -169,11 +170,13 @@
 <span></span>
 <span><span class="va">user</span></span>
 <span><span class="co">#&gt; # A tibble: 1 x 10</span></span>
-<span><span class="co">#&gt;   id      login display_name type  broadcaster_type description profile_image_u~</span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;            &lt;chr&gt;       &lt;chr&gt;           </span></span>
-<span><span class="co">#&gt; 1 613890~ kowa~ kowandtoilet ""    affiliate        Kyle and L~ https://static-~</span></span>
-<span><span class="co">#&gt; # ... with 3 more variables: offline_image_url &lt;chr&gt;, view_count &lt;int&gt;,</span></span>
-<span><span class="co">#&gt; #   created_at &lt;dttm&gt;</span></span></code></pre></div>
+<span><span class="co">#&gt;   id        login        display~1 type  broad~2 descr~3 profi~4 offli~5 view_~6</span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;        &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;int&gt;</span></span>
+<span><span class="co">#&gt; 1 613890167 kowandtoilet kowandto~ ""    affili~ Kyle a~ https:~ https:~    4989</span></span>
+<span><span class="co">#&gt; # ... with 1 more variable: created_at &lt;dttm&gt;, and abbreviated variable names</span></span>
+<span><span class="co">#&gt; #   1: display_name, 2: broadcaster_type, 3: description, 4: profile_image_url,</span></span>
+<span><span class="co">#&gt; #   5: offline_image_url, 6: view_count</span></span>
+<span><span class="co">#&gt; # i Use `colnames()` to see all variable names</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="get-videos">Get Videos<a class="anchor" aria-label="anchor" href="#get-videos"></a>
