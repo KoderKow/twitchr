@@ -16,17 +16,15 @@ Imports:
     glue,
     httr,
     httr2,
+    lifecycle,
     lubridate,
     magrittr,
-    rlang,
     purrr,
+    rlang,
     stringr,
     tibble,
     tidyr,
-    usethis,
-    lifecycle,
-    cli,
-    withr
+    usethis
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

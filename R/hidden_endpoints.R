@@ -38,3 +38,82 @@ get_chatters <- function(broadcaster) {
 
   return(chatters)
 }
+
+#' Get video comments
+#'
+#' **This uses undocumented API endpoints. This may change or break at anytime. Use at your own risk!**. Given a `video_id`, return the comments/chat related to that video.
+#'
+#' @param video_id A numeric. Video ID for the comments to extract.
+#'
+#' @family Hidden Endpoints
+#' @export
+#'
+#' @return A list of comments related to the requested `video_id`. `NULL` is returned if the `video_id` does not exist.
+#'
+#' @examples
+#' \dontrun{
+#' library(twitchr)
+#'
+#' twitch_auth()
+#'
+#' video_comments <- get_video_comments(822494395)
+#' }
+get_video_comments <- function(video_id) {
+  comment_header <- httr::add_headers(
+    `Client-ID` = httr2::secret_decrypt(tw, k),
+    Accept = "application/vnd.twitchtv.v5+json; charset=UTF-8"
+  )
+
+  resp <-
+    glue("https://api.twitch.tv/v5/videos/{video_id}/comments") %>%
+    httr::GET(comment_header) %>%
+    httr::content()
+
+  d <-
+    resp |>
+    purrr::pluck("comments") |>
+    purrr::map(~ {
+      .x$message$user_badges <- .x$message$user_badges |>
+        purrr::simplify() |>
+        purrr::map(purrr::pluck, "_id") |>
+        unlist() |>
+        stringr::str_c(collapse = ", ")
+
+      .x$message$fragments <- NULL
+      .x$message$emoticons <- NULL
+
+      return(.x)
+    }) |>
+    purrr::map_dfr(flatten_keep_names)
+
+  while (!is.null(resp$`_next`)) {
+    print(resp$`_next`)
+    resp <-
+      glue("https://api.twitch.tv/v5/videos/{video_id}/comments?cursor={resp$`_next`}") %>%
+      httr::GET(comment_header) %>%
+      httr::content()
+
+    d_next <-
+      resp |>
+      purrr::pluck("comments") |>
+      purrr::map(~ {
+        .x$message$user_badges <- .x$message$user_badges |>
+          purrr::simplify() |>
+          purrr::map(purrr::pluck, "_id") |>
+          unlist() |>
+          stringr::str_c(collapse = ", ")
+
+        .x$message$fragments <- NULL
+        .x$message$emoticons <- NULL
+
+        return(.x)
+      }) |>
+      purrr::map_dfr(flatten_keep_names)
+
+    d <-
+      d %>%
+      dplyr::bind_rows(d_next)
+  }
+
+  return(d)
+}

@@ -27,4 +27,8 @@ chatters <- get_chatters("KowAndToilet")
 \references{
 \url{https://thomassen.sh/twitch-api-endpoints/#tmi.twitch.tv/group/user/{USERNAME}/chatters}
 }
+\seealso{
+Other Hidden Endpoints: 
+\code{\link{get_video_comments}()}
+}
 \concept{Hidden Endpoints}

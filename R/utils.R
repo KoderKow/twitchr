@@ -21,7 +21,7 @@ make_request <- function(
 
   response_check <- check_status(response)
 
-  if (response_check == "bad") {
+  if (all(response_check %in% "bad")) {
     return(NULL)
   }
 
